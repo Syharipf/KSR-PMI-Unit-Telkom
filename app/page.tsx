@@ -25,6 +25,21 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col">
+      {/* Preload gambar pertama hero agar LCP PageSpeed instan */}
+      <link
+        rel="preload"
+        as="image"
+        href="/media/hero/mobile/1.webp"
+        media="(max-width: 767px)"
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/media/hero/1.webp"
+        media="(min-width: 768px)"
+        fetchPriority="high"
+      />
       {/* Hero Section */}
       <section className="relative isolate w-full overflow-hidden">
         <CinematicWallpaper sources={{ poster: HERO_POSTER }} stills={HERO_STILLS} opacity={0.88} />
@@ -44,7 +59,7 @@ export default function HomePage() {
             </span>
           </FadeIn>
 
-          <div className="relative flex flex-1 flex-col justify-center py-[clamp(12px,2vh,32px)]">
+          <div className="relative flex flex-1 flex-col justify-start py-4 md:justify-center md:py-[clamp(12px,2vh,32px)]">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute top-1/2 -right-[10vw] hidden aspect-square w-[38vw] max-w-[620px] -translate-y-1/2 md:block"
@@ -57,15 +72,15 @@ export default function HomePage() {
             </div>
 
             <FadeIn delay={0.08} className="relative">
-              <span className="block font-mono text-xs tracking-[0.24em] text-[var(--fg-2)] uppercase md:pl-[10vw]">
+              <span className="block font-mono text-[11px] tracking-[0.24em] text-[var(--fg-2)] uppercase md:text-xs md:pl-[10vw]">
                 01 — Siamo tutti fratelli
               </span>
-              <h1 className="mt-3 text-[clamp(2rem,min(4.4vw,7.5vh),4.25rem)] leading-[0.94] font-extrabold tracking-[-0.04em] text-[var(--fg)] uppercase drop-shadow-sm">
+              <h1 className="mt-2 text-3xl leading-[0.95] font-extrabold tracking-[-0.04em] text-[var(--fg)] uppercase drop-shadow-sm sm:text-4xl md:mt-3 md:text-[clamp(2rem,min(4.4vw,7.5vh),4.25rem)] md:leading-[0.94]">
                 <span className="block">Siamo</span>
-                <span className="block md:pl-[10vw]">tutti</span>
+                <span className="block pl-4 md:pl-[10vw]">tutti</span>
                 <span className="block">fratelli</span>
               </h1>
-              <p className="mt-[clamp(0.5rem,1.2vw,1rem)] text-right text-[clamp(0.95rem,1.2vw,1.15rem)] leading-none font-light tracking-[0.08em] text-[var(--fg-2)]">
+              <p className="mt-2 text-left font-mono text-xs tracking-wider text-[var(--fg-2)] md:mt-[clamp(0.5rem,1.2vw,1rem)] md:text-right md:text-[clamp(0.95rem,1.2vw,1.15rem)]">
                 KSR PMI Unit Telkom.
               </p>
             </FadeIn>
@@ -92,7 +107,7 @@ export default function HomePage() {
                   Kenali Sejarah Kami
                 </Link>
               </div>
-              <div className="flex items-end justify-between gap-4 font-mono text-xs tracking-[0.18em] text-[var(--muted)] uppercase md:col-span-3 md:flex-col md:items-end">
+              <div className="flex items-end justify-between gap-4 pb-2 font-mono text-xs tracking-[0.18em] text-[var(--muted)] uppercase sm:pb-0 md:col-span-3 md:flex-col md:items-end">
                 <span>Sejak {config.foundedAt.slice(0, 4)}</span>
                 <span>Gulir untuk menelusuri ↓</span>
               </div>

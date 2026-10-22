@@ -22,9 +22,18 @@ export function CinematicWallpaper({
 }: CinematicWallpaperProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(0);
+  const [loadedIndices, setLoadedIndices] = useState<number[]>([0]);
+  const [isMobile, setIsMobile] = useState(false);
+
   const slides = stills ?? [];
   const slideCount = slides.length;
   const hasStills = slideCount > 0;
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.innerWidth < 768);
+    }
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -48,21 +57,44 @@ export function CinematicWallpaper({
 
     const timer = window.setInterval(() => {
       if (document.hidden) return;
-      setActive((current) => (current + 1) % slideCount);
+      setActive((current) => {
+        const next = (current + 1) % slideCount;
+        setLoadedIndices((prev) => (prev.includes(next) ? prev : [...prev, next]));
+        return next;
+      });
     }, intervalMs);
 
     return () => window.clearInterval(timer);
   }, [slideCount, intervalMs]);
+
+  const getSlideUrl = (src: string) => {
+    if (isMobile && src.includes('/media/hero/')) {
+      return src.replace('/media/hero/', '/media/hero/mobile/');
+    }
+    return src;
+  };
 
   return (
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-[var(--bg)]"
     >
+      {/* Ambient gradient hemat memori & GPU (menggantikan blur-3xl berat) */}
+      <div
+        className="absolute inset-0 opacity-50"
+        style={{
+          background:
+            'radial-gradient(ellipse 80% 60% at 50% 50%, color-mix(in srgb, var(--accent) 15%, transparent) 0%, transparent 75%)',
+        }}
+      />
+
       <div className="absolute inset-0" style={{ opacity: `var(--wallpaper-opacity, ${opacity})` }}>
         {hasStills ? (
           slides.map((src, index) => {
             const isActive = index === active;
+            const isLoaded = loadedIndices.includes(index);
+            if (!isLoaded) return null;
+
             return (
               <div
                 key={src}
@@ -72,16 +104,11 @@ export function CinematicWallpaper({
                   zIndex: isActive ? 2 : 1,
                 }}
               >
-                {/* Lapisan ambient blur pengisi latar */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center blur-3xl scale-110 opacity-40"
-                  style={{ backgroundImage: `url("${src}")` }}
-                />
                 {/* Foto utama: pas 100% utuh tanpa terpotong atas maupun bawah */}
                 <div
                   className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-[10000ms] ease-out will-change-transform"
                   style={{
-                    backgroundImage: `url("${src}")`,
+                    backgroundImage: `url("${getSlideUrl(src)}")`,
                     transform: isActive ? 'scale(1.015)' : 'scale(1)',
                   }}
                 />
