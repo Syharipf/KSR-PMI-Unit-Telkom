@@ -23,17 +23,10 @@ export function CinematicWallpaper({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(0);
   const [loadedIndices, setLoadedIndices] = useState<number[]>([0]);
-  const [isMobile, setIsMobile] = useState(false);
 
   const slides = stills ?? [];
   const slideCount = slides.length;
   const hasStills = slideCount > 0;
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsMobile(window.innerWidth < 768);
-    }
-  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -67,19 +60,12 @@ export function CinematicWallpaper({
     return () => window.clearInterval(timer);
   }, [slideCount, intervalMs]);
 
-  const getSlideUrl = (src: string) => {
-    if (isMobile && src.includes('/media/hero/')) {
-      return src.replace('/media/hero/', '/media/hero/mobile/');
-    }
-    return src;
-  };
-
   return (
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-[var(--bg)]"
     >
-      {/* Ambient gradient hemat memori & GPU (menggantikan blur-3xl berat) */}
+      {/* Ambient gradient hemat memori & GPU */}
       <div
         className="absolute inset-0 opacity-50"
         style={{
@@ -95,6 +81,8 @@ export function CinematicWallpaper({
             const isLoaded = loadedIndices.includes(index);
             if (!isLoaded) return null;
 
+            const mobileSrc = src.replace('/media/hero/', '/media/hero/mobile/');
+
             return (
               <div
                 key={src}
@@ -104,14 +92,21 @@ export function CinematicWallpaper({
                   zIndex: isActive ? 2 : 1,
                 }}
               >
-                {/* Foto utama: pas 100% utuh tanpa terpotong atas maupun bawah */}
-                <div
-                  className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-[10000ms] ease-out will-change-transform"
-                  style={{
-                    backgroundImage: `url("${getSlideUrl(src)}")`,
-                    transform: isActive ? 'scale(1.015)' : 'scale(1)',
-                  }}
-                />
+                {/* Gunakan elemen native <picture> & <img> agar scanner C++ browser langsung mendeteksi gambar LCP */}
+                <picture className="absolute inset-0 block h-full w-full">
+                  <source media="(max-width: 767px)" srcSet={mobileSrc} />
+                  <img
+                    src={src}
+                    alt="KSR PMI Unit Universitas Telkom"
+                    fetchPriority={index === 0 ? 'high' : 'low'}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    className="h-full w-full object-contain object-center transition-transform duration-[10000ms] ease-out will-change-transform"
+                    style={{
+                      transform: isActive ? 'scale(1.015)' : 'scale(1)',
+                    }}
+                  />
+                </picture>
               </div>
             );
           })
@@ -131,9 +126,10 @@ export function CinematicWallpaper({
             <source src={sources.mp4} type="video/mp4" />
           </video>
         ) : (
-          <div
-            style={{ backgroundImage: `url("${sources.poster}")` }}
-            className="h-full w-full bg-cover bg-top"
+          <img
+            src={sources.poster}
+            alt=""
+            className="h-full w-full object-cover object-top"
           />
         )}
       </div>

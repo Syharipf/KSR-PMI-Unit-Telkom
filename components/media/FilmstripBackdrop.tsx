@@ -78,7 +78,7 @@ export function FilmstripBackdrop() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden select-none"
+      className="pointer-events-none absolute inset-0 -z-10 hidden md:block overflow-hidden select-none"
     >
       <StripRow
         offset={0}
