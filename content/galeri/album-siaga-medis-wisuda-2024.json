@@ -1,25 +1,18 @@
 {
   "slug": "album-siaga-medis-wisuda-2024",
-  "title": "Lorem Ipsum Dolor Sit Amet",
+  "title": "Dokumentasi Siaga Medis Wisuda 2024",
   "date": "2024-03-23",
   "cover": {
-    "src": "/media/hero/ksr-hero-poster.svg",
-    "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "src": "/media/kegiatan/siaga-medis-wisuda-periode-1-2024.svg",
+    "alt": "Dokumentasi tim medis KSR saat wisuda Telkom University",
     "type": "image",
     "width": 1600,
     "height": 900
   },
   "items": [
     {
-      "src": "/media/hero/ksr-hero-poster.svg",
-      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "type": "image",
-      "width": 1600,
-      "height": 900
-    },
-    {
-      "src": "/media/hero/ksr-hero-poster.svg",
-      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "src": "/media/kegiatan/siaga-medis-wisuda-periode-1-2024.svg",
+      "alt": "Posko siaga medis KSR PMI di gedung TUCH",
       "type": "image",
       "width": 1600,
       "height": 900

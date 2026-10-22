@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="grad_gladi-lapangan-diklatsar-angkatan-10" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06281e"/>
+      <stop offset="100%" stop-color="#02130e"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#grad_gladi-lapangan-diklatsar-angkatan-10)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- Center Decorative Glow -->
+  <circle cx="800" cy="480" r="260" fill="#10b981" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Icon Graphic -->
+  <g>
+    <path d="M680 580 L800 380 L920 580 Z M760 580 L800 480 L840 580 Z" fill="#10b981"/><path d="M800 480 L800 580" stroke="#064e3b" stroke-width="6"/>
+  </g>
+
+  <!-- Badge Tag -->
+  <rect x="100" y="100" width="166" height="42" rx="21" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
+  <text x="120" y="127" font-family="sans-serif" font-size="14" font-weight="bold" fill="#10b981" letter-spacing="2">DIKLATSAR</text>
+
+  <!-- Headline & Location at bottom -->
+  <text x="100" y="750" font-family="sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="-0.5">Gladi Lapangan Diklatsar Angkatan X</text>
+  <text x="100" y="800" font-family="monospace" font-size="20" font-weight="500" fill="rgba(255,255,255,0.6)">Bumi Perkemahan Rancaupas, Ciwidey · KSR PMI Unit Telkom</text>
+</svg>

@@ -25,8 +25,12 @@ export function AudioToggle() {
       data-sound="none"
       aria-pressed={enabled}
       aria-label={enabled ? 'Matikan efek suara situs' : 'Nyalakan efek suara situs'}
-      title={enabled ? 'Efek suara aktif — klik untuk mematikan' : 'Efek suara nonaktif — klik untuk menyalakan'}
-      className={`flex h-9 w-9 min-w-9 cursor-pointer items-center justify-center rounded-[var(--radius-sm)] border bg-[var(--surface)] transition-colors hover:bg-[var(--surface-warm)] focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:outline-none sm:h-10 sm:w-10 sm:min-w-10 ${
+      title={
+        enabled
+          ? 'Efek suara aktif — klik untuk mematikan'
+          : 'Efek suara nonaktif — klik untuk menyalakan'
+      }
+      className={`flex h-10 w-10 min-w-10 cursor-pointer items-center justify-center rounded-[var(--radius-sm)] border bg-[var(--surface)] transition-colors hover:bg-[var(--surface-warm)] focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:outline-none ${
         enabled
           ? 'border-[var(--accent)] text-[var(--accent)]'
           : 'border-[var(--border)] text-[var(--muted)]'

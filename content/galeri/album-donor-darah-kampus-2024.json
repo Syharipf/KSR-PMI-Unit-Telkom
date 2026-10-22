@@ -1,25 +1,18 @@
 {
   "slug": "album-donor-darah-kampus-2024",
-  "title": "Lorem Ipsum Dolor Sit Amet",
+  "title": "Dokumentasi Donor Darah Kampus 2024",
   "date": "2024-03-15",
   "cover": {
-    "src": "/media/hero/ksr-hero-poster.svg",
-    "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "src": "/media/kegiatan/donor-darah-ramadhan-1445h.svg",
+    "alt": "Aksi donor darah mahasiswa di Student Center",
     "type": "image",
     "width": 1600,
     "height": 900
   },
   "items": [
     {
-      "src": "/media/hero/ksr-hero-poster.svg",
-      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "type": "image",
-      "width": 1600,
-      "height": 900
-    },
-    {
-      "src": "/media/hero/ksr-hero-poster.svg",
-      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "src": "/media/kegiatan/donor-darah-ramadhan-1445h.svg",
+      "alt": "Proses pengambilan darah oleh tim teknis UTD PMI",
       "type": "image",
       "width": 1600,
       "height": 900

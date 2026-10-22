@@ -31,7 +31,7 @@ export function SiteFooter({ config }: SiteFooterProps) {
               </span>
             </div>
             <p className="text-sm text-[var(--muted)] leading-relaxed">
-              {config.tagline} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              {config.tagline}
             </p>
             <p className="font-mono text-sm text-[var(--meta)]">
               SK Rektor: {config.decree}

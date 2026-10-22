@@ -1,5 +1,473 @@
 import React from 'react';
 
+/** Roda motor: ban, pelek, dan jari-jari yang ikut berputar. */
+function BikeWheel({ cx, cy, r }: { cx: number; cy: number; r: number }) {
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r} fill="var(--amb-tire)" />
+      <circle cx={cx} cy={cy} r={r * 0.58} fill="var(--amb-rim)" />
+      <circle cx={cx} cy={cy} r={r * 0.2} fill="var(--amb-tire)" />
+      <g
+        className="ambulance-wheel"
+        style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
+      >
+        {[0, 72, 144, 216, 288].map((angle) => (
+          <line
+            key={angle}
+            x1={cx}
+            y1={cy}
+            x2={cx + r * 0.58 * Math.cos((angle * Math.PI) / 180)}
+            y2={cy + r * 0.58 * Math.sin((angle * Math.PI) / 180)}
+            stroke="var(--amb-spoke)"
+            strokeWidth="1.4"
+          />
+        ))}
+      </g>
+    </g>
+  );
+}
+
+/** Pengawal sport bike: fairing merah, rompi PMI, helm, dan tas PP di buritan. */
+function SportBike() {
+  return (
+    <svg viewBox="0 0 130 86" role="presentation" className="h-auto w-full">
+      <ellipse cx="65" cy="84" rx="60" ry="3" fill="var(--amb-ink)" opacity="0.16" />
+      <BikeWheel cx={28} cy={70} r={13} />
+      <BikeWheel cx={104} cy={70} r={13} />
+
+      <g className="ambulance-suspension">
+        {/* Knalpot */}
+        <path
+          d="M17 62 H35 L40 68 H22 Z"
+          fill="var(--amb-rim)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.5"
+        />
+
+        {/* Buritan & jok belakang */}
+        <path
+          d="M14 56 L25 47 H43 L52 55 L46 62 H22 Z"
+          fill="var(--accent)"
+          stroke="var(--amb-ink)"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <rect x="12" y="53" width="3" height="7" rx="1" fill="#fff" opacity="0.7" />
+
+        {/* Tas PP di atas buritan */}
+        <rect
+          x="18"
+          y="36"
+          width="24"
+          height="17"
+          rx="3"
+          fill="var(--accent)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+        />
+        <path
+          d="M23 36 V33 Q23 30 26 30 H34 Q37 30 37 33 V36"
+          fill="none"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.6"
+        />
+        <rect x="25" y="40" width="10" height="9" rx="1.5" fill="#fff" opacity="0.95" />
+        <rect x="28.8" y="41.5" width="2.4" height="6" fill="var(--accent)" />
+        <rect x="26.5" y="43.7" width="7" height="2.4" fill="var(--accent)" />
+
+        {/* Fairing bawah */}
+        <path
+          d="M40 60 Q54 51 70 48 L90 43 L108 45 L116 53 L108 60 Q86 65 62 65 Z"
+          fill="var(--accent)"
+          stroke="var(--amb-ink)"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <path d="M52 53 L72 48 L80 58 L58 61 Z" fill="var(--amb-body)" opacity="0.92" />
+
+        {/* Tangki */}
+        <path
+          d="M60 44 Q70 35 83 38 L88 45 L70 50 Z"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+        />
+        <path d="M36 45 H60 L56 52 H40 Z" fill="var(--amb-ink)" opacity="0.9" />
+
+        {/* Kaki & sepatu pembalap */}
+        <path
+          d="M54 48 Q45 54 43 62 L52 65 Q57 56 64 52 Z"
+          fill="var(--amb-glass)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.2"
+          strokeLinejoin="round"
+        />
+        <rect x="38" y="62" width="12" height="4" rx="1.5" fill="var(--amb-ink)" />
+
+        {/* Torso berompi PMI */}
+        <path
+          d="M71 30 Q64 39 59 47 L67 52 Q75 42 82 33 Z"
+          fill="var(--accent)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M41 39 Q56 33 74 34"
+          fill="none"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+          opacity="0.4"
+        />
+        <rect x="55" y="34.5" width="4" height="2.5" rx="0.8" fill="var(--amb-ink)" opacity="0.5" />
+        <rect x="66.5" y="37" width="7" height="7" rx="1" fill="#fff" opacity="0.95" />
+        <rect x="69" y="38.5" width="2" height="4" fill="var(--accent)" />
+        <rect x="68" y="39.5" width="4" height="2" fill="var(--accent)" />
+        <path
+          d="M67 34 Q74 35 79 37"
+          fill="none"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.1"
+          opacity="0.35"
+        />
+
+        {/* Lengan */}
+        <path
+          d="M78 33 Q92 35 100 41"
+          fill="none"
+          stroke="var(--amb-ink)"
+          strokeWidth="7"
+          strokeLinecap="round"
+        />
+        <path
+          d="M78 33 Q92 35 100 41"
+          fill="none"
+          stroke="var(--amb-body)"
+          strokeWidth="4.5"
+          strokeLinecap="round"
+        />
+
+        {/* Helm putih dengan stiker palang */}
+        <circle
+          cx="83"
+          cy="22"
+          r="9"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+        />
+        <path d="M85 16 Q93 18 92 24 L85 26 Z" fill="var(--amb-glass)" />
+        <path
+          d="M76 17 Q82 13 89 15"
+          fill="none"
+          stroke="var(--accent)"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+        />
+        <rect x="78.5" y="20" width="4" height="1.3" fill="var(--accent)" />
+        <rect x="79.7" y="18.8" width="1.3" height="3.7" fill="var(--accent)" />
+
+        {/* Kaca depan & cowl */}
+        <path
+          d="M94 40 L106 24 L115 32 L110 42 Z"
+          fill="var(--amb-glass)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path d="M98 40 L110 30" stroke="var(--amb-rim)" strokeWidth="1.2" opacity="0.6" />
+        <path
+          d="M92 43 L109 38 Q117 39 118 47 L114 54 L98 57 Z"
+          fill="var(--accent)"
+          stroke="var(--amb-ink)"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <rect x="111" y="47" width="5" height="5" rx="1.5" fill="var(--amb-beam)" />
+        <path d="M101 56 L104 62" stroke="var(--amb-ink)" strokeWidth="3" strokeLinecap="round" />
+
+        {/* Setang & spion */}
+        <path d="M92 41 L101 37" stroke="var(--amb-ink)" strokeWidth="2" strokeLinecap="round" />
+        <path d="M90 34 L96 33" stroke="var(--amb-ink)" strokeWidth="2" strokeLinecap="round" />
+        <rect x="95" y="31" width="5" height="3.5" rx="1" fill="var(--amb-ink)" />
+
+        {/* Strobo merah-biru */}
+        <ellipse
+          cx="112"
+          cy="41"
+          rx="10"
+          ry="7"
+          fill="var(--accent)"
+          opacity="0.3"
+          className="ambulance-beacon-glow"
+        />
+        <rect x="104" y="37.5" width="15" height="4" rx="1.5" fill="var(--amb-ink)" />
+        <rect
+          x="105.5"
+          y="38.7"
+          width="5.5"
+          height="1.8"
+          rx="0.9"
+          fill="var(--amb-strobe-blue)"
+          className="ambulance-beacon-lens"
+        />
+        <rect
+          x="112.5"
+          y="38.7"
+          width="5"
+          height="1.8"
+          rx="0.9"
+          fill="var(--accent)"
+          className="ambulance-beacon-lens"
+          style={{ animationDelay: '-320ms' }}
+        />
+      </g>
+    </svg>
+  );
+}
+
+/** Pengawal skuter PCX: apron tinggi, kaca depan, rompi PMI, dan tas PP. */
+function PcxScooter() {
+  return (
+    <svg viewBox="0 0 130 88" role="presentation" className="h-auto w-full">
+      <ellipse cx="65" cy="85" rx="58" ry="3" fill="var(--amb-ink)" opacity="0.16" />
+      <BikeWheel cx={30} cy={71} r={13} />
+      <BikeWheel cx={112} cy={71} r={13.5} />
+
+      <g className="ambulance-suspension">
+        {/* Knalpot krom */}
+        <path
+          d="M16 63 H42 L48 69 H20 Z"
+          fill="var(--amb-rim)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.4"
+        />
+
+        {/* Bodi belakang yang gemuk khas PCX */}
+        <path
+          d="M12 70 L12 56 Q12 47 20 45 L24 44 L26 40 L54 40 L58 46 L58 56 L54 66 L50 70 Z"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <path d="M22 51 H54 L56 56 H24 Z" fill="var(--accent)" opacity="0.9" />
+        <rect x="9" y="47" width="4" height="8" rx="1" fill="var(--accent)" />
+
+        {/* Mesin & rumah CVT di balik dek */}
+        <path d="M40 62 H68 Q76 64 76 69 Q76 72 68 72 H44 Z" fill="var(--amb-ink)" opacity="0.85" />
+        <circle cx="58" cy="66" r="7" fill="var(--amb-rim)" opacity="0.35" />
+
+        {/* Rel pegangan krom */}
+        <path d="M14 42 H32" stroke="var(--amb-rim)" strokeWidth="2.6" strokeLinecap="round" />
+
+        {/* Jok panjang */}
+        <path
+          d="M20 44 Q22 39 30 38 L44 38 L47 41 L58 41 Q63 42 62 46 L56 49 L22 49 Z"
+          fill="var(--amb-ink)"
+          opacity="0.92"
+        />
+
+        <path
+          d="M38 48 H62"
+          stroke="var(--amb-ink)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          opacity="0.45"
+        />
+
+        {/* Tas PP di rak belakang */}
+        <rect
+          x="9"
+          y="26"
+          width="24"
+          height="17"
+          rx="3"
+          fill="var(--accent)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+        />
+        <path
+          d="M14 26 V23 Q14 20 17 20 H26 Q29 20 29 23 V26"
+          fill="none"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.6"
+        />
+        <rect x="15.5" y="30" width="11" height="9" rx="1.5" fill="#fff" opacity="0.95" />
+        <rect x="19.6" y="31.5" width="2.4" height="6" fill="var(--accent)" />
+        <rect x="17.2" y="33.7" width="7" height="2.4" fill="var(--accent)" />
+
+        {/* Pijakan kaki & skirt samping */}
+        <path d="M54 64 H92 L100 69 H56 Z" fill="var(--amb-ink)" opacity="0.92" />
+        <path
+          d="M52 69 H96 L102 74 H56 Z"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+
+        {/* Apron depan PCX: bidang tinggi dari dek ke setang */}
+        <path
+          d="M86 67 L88 46 Q88 32 98 29 L106 28 Q112 31 112 41 L109 51 Q107 57 102 61 L96 66 L92 68 Z"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M93 65 L95 48 Q95 39 100 37 L104 37 L105 56 Q104 62 99 65 Z"
+          fill="var(--amb-glass)"
+          opacity="0.25"
+        />
+        <path
+          d="M94 61 Q101 64 109 59"
+          fill="none"
+          stroke="var(--accent)"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+        <path d="M96 55 L108 52 L105 61 L99 65 Z" fill="var(--amb-ink)" opacity="0.18" />
+        <path
+          d="M104 42 L111 40 L113 48 L106 52 Z"
+          fill="var(--amb-beam)"
+          stroke="var(--amb-ink)"
+          strokeWidth="0.8"
+        />
+
+        {/* Fender depan melengkung di atas roda */}
+        <path
+          d="M96 63 Q109 54 127 61 L124 66 Q109 58 99 68 Z"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+        <path d="M104 57 L112 66" stroke="var(--amb-ink)" strokeWidth="3.5" strokeLinecap="round" />
+
+        {/* Kaki & sepatu pengendara */}
+        <path
+          d="M54 48 Q64 51 70 59 L78 65 L87 67 L87 64 L77 57 Q67 47 60 45 Z"
+          fill="var(--amb-glass)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.2"
+          strokeLinejoin="round"
+        />
+        <rect x="84" y="63" width="10" height="4" rx="1.5" fill="var(--amb-ink)" />
+
+        {/* Torso berompi PMI */}
+        <path
+          d="M50 45 Q54 34 62 30 L69 32 Q69 41 65 48 Q58 51 52 49 Z"
+          fill="var(--accent)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M32 33 Q44 34 56 36"
+          fill="none"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+          opacity="0.4"
+        />
+        <rect x="42" y="33" width="4" height="2.5" rx="0.8" fill="var(--amb-ink)" opacity="0.5" />
+        <rect x="56" y="37.5" width="7.5" height="7.5" rx="1" fill="#fff" opacity="0.95" />
+        <rect x="58.8" y="39" width="2.4" height="4.5" fill="var(--accent)" />
+        <rect x="57.3" y="41.1" width="5.4" height="2.4" fill="var(--accent)" />
+
+        {/* Lengan ke setang */}
+        <path
+          d="M65 33 Q80 34 96 39"
+          fill="none"
+          stroke="var(--amb-ink)"
+          strokeWidth="7"
+          strokeLinecap="round"
+        />
+        <path
+          d="M65 33 Q80 34 96 39"
+          fill="none"
+          stroke="var(--amb-body)"
+          strokeWidth="4.5"
+          strokeLinecap="round"
+        />
+        <circle cx="96" cy="39" r="2.6" fill="var(--amb-ink)" />
+
+        {/* Helm putih dengan stiker palang */}
+        <rect x="63" y="26" width="4" height="4" fill="var(--amb-body)" />
+        <circle
+          cx="66"
+          cy="18"
+          r="9.5"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+        />
+        <path d="M68 11 Q77 14 75 21 L68 23 Z" fill="var(--amb-glass)" />
+        <path
+          d="M58 13 Q65 8 73 12"
+          fill="none"
+          stroke="var(--accent)"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+        />
+        <rect x="61.5" y="15.5" width="4.2" height="1.3" fill="var(--accent)" />
+        <rect x="62.8" y="14.2" width="1.3" height="3.9" fill="var(--accent)" />
+
+        {/* Cowl setang, kaca tinggi, dan spion */}
+        <path
+          d="M90 36 Q94 30 102 29 L110 31 L112 37 L103 40 L91 39 Z"
+          fill="var(--amb-body)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M94 33 Q96 18 99 9 Q100 6 103 8 L110 16 Q113 19 112 24 L108 34 L100 37 Z"
+          fill="var(--amb-glass)"
+          stroke="var(--amb-ink)"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+        <path d="M99 30 L101 15" stroke="var(--amb-rim)" strokeWidth="1.2" opacity="0.6" />
+        <path d="M91 36 L100 34" stroke="var(--amb-ink)" strokeWidth="2.2" strokeLinecap="round" />
+        <path d="M90 29 L97 28" stroke="var(--amb-ink)" strokeWidth="2" strokeLinecap="round" />
+        <rect x="96" y="25.5" width="5" height="3.5" rx="1" fill="var(--amb-ink)" />
+
+        {/* Strobo merah-biru di apron depan */}
+        <ellipse
+          cx="110"
+          cy="56"
+          rx="9"
+          ry="6"
+          fill="var(--accent)"
+          opacity="0.3"
+          className="ambulance-beacon-glow"
+        />
+        <rect x="102" y="53" width="14" height="4" rx="1.5" fill="var(--amb-ink)" />
+        <rect
+          x="103.5"
+          y="54.2"
+          width="5.5"
+          height="1.8"
+          rx="0.9"
+          fill="var(--amb-strobe-blue)"
+          className="ambulance-beacon-lens"
+        />
+        <rect
+          x="110"
+          y="54.2"
+          width="5"
+          height="1.8"
+          rx="0.9"
+          fill="var(--accent)"
+          className="ambulance-beacon-lens"
+          style={{ animationDelay: '-320ms' }}
+        />
+      </g>
+    </svg>
+  );
+}
+
 /**
  * Pita jalan dengan ambulans KSR yang melintas berkala.
  * Animasi murni CSS (lihat app/globals.css) — tanpa JS klien,
@@ -90,6 +558,14 @@ export function AmbulancePass({ className = '' }: { className?: string }) {
       {/* Marka putus-putus lajur jalan */}
       <div className="ambulance-lane" />
 
+      {/* Pengawal motor: PCX paling belakang, lalu sport bike, ambulans di depan */}
+      <div className="ambulance-bike ambulance-bike--pcx">
+        <PcxScooter />
+      </div>
+      <div className="ambulance-bike ambulance-bike--sport">
+        <SportBike />
+      </div>
+
       {/* Kendaraan ambulans */}
       <div className="ambulance-vehicle">
         <svg viewBox="0 0 280 108" role="presentation" className="h-auto w-full">
@@ -112,14 +588,7 @@ export function AmbulancePass({ className = '' }: { className?: string }) {
           <ellipse cx="122" cy="103" rx="104" ry="5" fill="var(--amb-ink)" opacity="0.16" />
 
           {/* Elips wake di belakang bawah roda */}
-          <ellipse
-            cx="6"
-            cy="96"
-            rx="5"
-            ry="2"
-            fill="var(--amb-ink)"
-            className="ambulance-wake"
-          />
+          <ellipse cx="6" cy="96" rx="5" ry="2" fill="var(--amb-ink)" className="ambulance-wake" />
           <ellipse
             cx="2"
             cy="99"

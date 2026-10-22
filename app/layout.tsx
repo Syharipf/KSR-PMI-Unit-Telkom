@@ -84,7 +84,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--fg)] antialiased transition-colors">
+      <body className="app-body flex flex-col bg-[var(--bg)] text-[var(--fg)] antialiased transition-colors">
         <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
           <SoundController />
           <SiteHeader config={config} />

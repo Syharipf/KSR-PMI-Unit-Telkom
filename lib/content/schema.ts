@@ -169,7 +169,7 @@ export const PrestasiSchema = z.object({
 });
 
 export const LayananSchema = z.object({
-  slug: z.enum(['siaga-medis', 'donor-darah', 'pelatihan', 'kerja-sama']),
+  slug: z.enum(['siaga-medis', 'donor-darah', 'pelatihan', 'kerja-sama', 'peminjaman-barang']),
   nama: z.string(),
   ringkas: z.string(),
   deskripsi: z.string(),
@@ -180,7 +180,83 @@ export const LayananSchema = z.object({
     type: z.enum(['whatsapp', 'form']),
     href: z.string(),
   }),
-  ikon: z.enum(['medical', 'blood', 'training', 'handshake']),
+  phone: z
+    .object({
+      label: z.string(),
+      href: z.string(),
+      contact: z.string().optional(),
+    })
+    .optional(),
+  instagram: z
+    .object({
+      url: z.string().url(),
+      label: z.string(),
+    })
+    .optional(),
+  qr: z
+    .object({
+      src: z.string(),
+      url: z.string().url(),
+      label: z.string(),
+      caption: z.string(),
+    })
+    .optional(),
+  submission: z
+    .object({
+      lineId: z.string(),
+      lineHref: z.string().url(),
+      lineQr: z.string().optional(),
+      whatsapp: z.string(),
+      whatsappHref: z.string().url(),
+      whatsappQr: z.string().optional(),
+      contact: z.string().optional(),
+      sopUrl: z.string().url().optional(),
+      scheduleUrl: z.string().url().optional(),
+      siagaLetterUrl: z.string().url().optional(),
+      trainingLetterUrl: z.string().url().optional(),
+      donorLetterUrl: z.string().url().optional(),
+      formUrl: z.string().url().optional(),
+      feedbackUrl: z.string().url().optional(),
+    })
+    .optional(),
+  coverage: z
+    .object({
+      mapQuery: z.string(),
+      radiusKm: z.number().positive().optional(),
+      areas: z.array(z.string()),
+    })
+    .optional(),
+  rental: z
+    .object({
+      catalog: z.array(
+        z.object({
+          group: z.string(),
+          items: z.array(
+            z.object({
+              nama: z.string(),
+              harga: z.string(),
+            }),
+          ),
+        }),
+      ),
+      packages: z.array(
+        z.object({
+          nama: z.string(),
+          isi: z.array(z.string()),
+          harga: z.string(),
+        }),
+      ),
+      priceListImages: z.array(
+        z.object({
+          src: z.string(),
+          alt: z.string(),
+          width: z.number(),
+          height: z.number(),
+        }),
+      ),
+    })
+    .optional(),
+  ikon: z.enum(['medical', 'blood', 'training', 'handshake', 'box']),
 });
 
 export const FaqSchema = z.object({

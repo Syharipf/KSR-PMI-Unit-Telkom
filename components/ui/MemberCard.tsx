@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import type { Anggota } from '@/lib/content/schema';
+import { PhotoTrigger } from '@/components/media/Lightbox';
 
 interface MemberCardProps {
   member: Anggota;
@@ -7,42 +7,44 @@ interface MemberCardProps {
   featured?: boolean;
   sizes?: string;
   priority?: boolean;
+  /** Nomor urut kartu, tampil sebagai angka latar bergaya arsip. */
+  index?: number;
 }
 
 /**
- * Kartu pengurus berpotret penuh (4:5) dengan nama di atas gradien.
- * Foto diperbesar saat hover, dan kartu terangkat untuk memberi kedalaman.
+ * Kartu pengurus: potret persegi menempel di tepi kiri kartu, identitas
+ * di kanan, dan nomor urut besar sebagai latar. Potret dibuat cukup besar
+ * agar wajah terbaca, tanpa memenuhi seluruh kartu.
  */
 export function MemberCard({
   member,
   role,
   featured = false,
-  sizes = '(max-width: 640px) 100vw, 360px',
+  sizes = '(max-width: 640px) 100vw, 320px',
   priority = false,
+  index,
 }: MemberCardProps) {
   return (
     <article className={`cabinet-card ${featured ? 'cabinet-card--featured' : ''}`}>
       <div className="cabinet-media">
         {member.foto ? (
-          <Image
-            src={member.foto.src}
-            alt={member.foto.alt}
-            fill
-            sizes={sizes}
-            priority={priority}
-            className="cabinet-photo object-cover"
-          />
+          <PhotoTrigger photo={member.foto} sizes={sizes} priority={priority} />
         ) : (
           <span
             aria-hidden="true"
-            className="flex h-full w-full items-center justify-center bg-[var(--surface-warm)] font-display text-5xl font-extrabold text-[var(--muted)]"
+            className="font-display flex h-full w-full items-center justify-center bg-[var(--surface-warm)] text-2xl font-extrabold text-[var(--muted)]"
           >
             {member.nama.slice(0, 1)}
           </span>
         )}
       </div>
 
-      <div className="cabinet-overlay">
+      <div className="cabinet-body">
+        {index !== undefined && (
+          <span aria-hidden="true" className="cabinet-index">
+            {String(index).padStart(2, '0')}
+          </span>
+        )}
         <span className="cabinet-role">{role ?? member.jabatan}</span>
         <h3 className="cabinet-name">{member.nama}</h3>
         <p className="cabinet-meta">

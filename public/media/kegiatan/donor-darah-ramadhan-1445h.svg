@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="grad_donor-darah-ramadhan-1445h" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#311013"/>
+      <stop offset="100%" stop-color="#150607"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#grad_donor-darah-ramadhan-1445h)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- Center Decorative Glow -->
+  <circle cx="800" cy="480" r="260" fill="#ef4444" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Icon Graphic -->
+  <g>
+    <path d="M800 340 C750 420 720 480 720 530 C720 580 755 620 800 620 C845 620 880 580 880 530 C880 480 850 420 800 340 Z" fill="#c51d24"/>
+  </g>
+
+  <!-- Badge Tag -->
+  <rect x="100" y="100" width="194" height="42" rx="21" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="120" y="127" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444" letter-spacing="2">DONOR DARAH</text>
+
+  <!-- Headline & Location at bottom -->
+  <text x="100" y="750" font-family="sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="-0.5">Aksi Donor Darah Ramadhan 1445 H</text>
+  <text x="100" y="800" font-family="monospace" font-size="20" font-weight="500" fill="rgba(255,255,255,0.6)">Gedung Student Center Telkom University · KSR PMI Unit Telkom</text>
+</svg>

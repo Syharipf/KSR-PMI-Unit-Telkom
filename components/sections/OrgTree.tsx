@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import { ORG_DEPARTMENTS, ORG_LEADERS, ORG_OVERSIGHT } from '@/lib/struktur';
 
+/** Divisi dibagi tiga per baris; CSS menyatukannya jadi satu baris penuh di layar lebar. */
+const DEPT_ROWS = [ORG_DEPARTMENTS.slice(0, 3), ORG_DEPARTMENTS.slice(3, 6)];
+
 /**
  * Bagan organisasi bergaya pohon keluarga: badan pengawas di puncak,
  * inti (komandan, wakom, sekre, benda) di jalur komando, lalu enam divisi
@@ -25,9 +28,12 @@ export function OrgTree() {
             </h2>
           </div>
           <p className="max-w-[42ch] text-sm leading-relaxed text-[var(--muted)]">
-            Bagan ini menjelaskan fungsi tiap simpul, bukan nama personel. Nama pengurus yang
-            sedang menjabat ada di{' '}
-            <Link href="/kepengurusan" className="font-semibold text-[var(--accent)] hover:underline">
+            Bagan ini menjelaskan fungsi tiap simpul, bukan nama personel. Nama pengurus yang sedang
+            menjabat ada di{' '}
+            <Link
+              href="/kepengurusan"
+              className="font-semibold text-[var(--accent)] hover:underline"
+            >
               halaman Kabinet
             </Link>
             .
@@ -70,15 +76,21 @@ export function OrgTree() {
           <div className="org-stem org-stem--dept" aria-hidden="true" />
 
           <div className="org-tier org-tier--dept org-branch">
-            {ORG_DEPARTMENTS.map((dept, index) => (
-              <article key={dept.slug} className="org-card org-card--dept">
-                <div className="flex items-start justify-between gap-3">
-                  <span className="org-card__abbr">{dept.abbr}</span>
-                  <span className="org-card__index">{String(index + 1).padStart(2, '0')}</span>
-                </div>
-                <span className="org-card__role org-card__role--dept">{dept.name}</span>
-                <p className="org-card__scope">{dept.summary}</p>
-              </article>
+            {DEPT_ROWS.map((row, rowIndex) => (
+              <div key={rowIndex} className="org-branch__row">
+                {row.map((dept, index) => (
+                  <article key={dept.slug} className="org-card org-card--dept">
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="org-card__abbr">{dept.abbr}</span>
+                      <span className="org-card__index">
+                        {String(rowIndex * 3 + index + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <span className="org-card__role org-card__role--dept">{dept.name}</span>
+                    <p className="org-card__scope">{dept.summary}</p>
+                  </article>
+                ))}
+              </div>
             ))}
           </div>
         </div>

@@ -1,102 +1,295 @@
 [
   {
     "slug": "siaga-medis",
-    "nama": "Lorem Ipsum Dolor Sit Amet",
-    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "nama": "Call Center",
+    "ringkas": "Bantuan medis darurat dalam radius ±2 km dari Telkom University, siaga setiap hari pukul 07.00–22.00 WIB.",
+    "deskripsi": "KSR PMI Unit Universitas Telkom menyiagakan relawan untuk membantu penanganan medis darurat di lingkungan kampus dan area sekitarnya, dengan jangkauan maksimal ±2 km dari Telkom University. Layanan dapat dihubungi melalui Call Center WhatsApp 0851-2151-1120 pada pukul 07.00–22.00 WIB.",
     "syarat": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Berada dalam radius ±2 km dari Telkom University atau area yang masih dapat dijangkau tim.",
+      "Sampaikan lokasi, kondisi, dan jumlah korban dengan jelas.",
+      "Nomor pelapor aktif agar tim dapat menghubungi kembali."
     ],
     "alur": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Hubungi layanan darurat via WhatsApp di 0851-2151-1120.",
+      "Jelaskan lokasi, kondisi, dan jumlah korban.",
+      "Tim siaga bergerak menuju lokasi.",
+      "Lakukan penanganan pertama dan evakuasi bila diperlukan.",
+      "Koordinasi lanjutan dengan fasilitas kesehatan terdekat."
     ],
     "cta": {
-      "label": "Ajukan Siaga Medis via WhatsApp",
+      "label": "Hubungi Layanan Darurat via WhatsApp",
       "type": "whatsapp",
-      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mengajukan%20siaga%20medis%20untuk%20kegiatan%20%3Cnama%3E%20pada%20%3Ctanggal%3E%20di%20%3Clokasi%3E."
+      "href": "https://wa.me/6285121511120?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20membutuhkan%20bantuan%20medis%20darurat%20di%20%3Clokasi%3E.%20Kondisi%3A%20%3Ckondisi%20korban%3E."
     },
-    "ikon": "medical"
+    "ikon": "medical",
+    "instagram": {
+      "url": "https://www.instagram.com/p/DeY3a55GaY3/",
+      "label": "Lihat poster layanan darurat di Instagram"
+    },
+    "coverage": {
+      "mapQuery": "Telkom University Bandung",
+      "areas": ["Telkom University", "Sukapura", "Dayeuhkolot", "Buahbatu", "Area sekitar kampus"],
+      "radiusKm": 2
+    },
+    "phone": {
+      "label": "0851-2151-1120",
+      "contact": "Call Center Tim Siaga",
+      "href": "tel:+6285121511120"
+    },
+    "qr": {
+      "src": "/media/layanan/qr-siaga-medis-wa.png",
+      "url": "https://wa.me/6285121511120",
+      "label": "WhatsApp Layanan Darurat",
+      "caption": "Pindai untuk membuka WhatsApp layanan darurat."
+    }
   },
   {
     "slug": "donor-darah",
-    "nama": "Lorem Ipsum Dolor Sit Amet",
-    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "nama": "Pengajuan Kerja Sama Donor Darah",
+    "ringkas": "Fasilitasi dan pendampingan kerja sama donor darah kampus bersama Unit Transfusi Darah (UTD) PMI.",
+    "deskripsi": "Ajukan kerja sama donor darah melalui OA LINE KSR PMI Unit Universitas Telkom atau WhatsApp narahubung 0812-8757-3047 (Vadyo). Lengkapi surat permohonan dan isi formulir online paling lambat H-40 sebelum pelaksanaan.",
     "syarat": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Cek jadwal kegiatan KSR PMI Unit Universitas Telkom untuk menemukan tanggal yang sesuai.",
+      "Surat permohonan kerja sama donor darah wajib bertanda tangan dan berstempel Kepanitiaan/UKM/Ormawa/Himpunan/BEM serta mencantumkan Contact Person (CP).",
+      "Pengisian formulir online paling lambat H-40 sebelum pelaksanaan acara.",
+      "Konfirmasi pengajuan ke Admin OA; konfirmasi kepastian diberikan maksimal H-30 sebelum pelaksanaan.",
+      "Penyelenggara wajib menyediakan sarana dan prasarana (ruangan bersih/ber-AC, meja, kursi, konsumsi personil UTD PMI & KSR).",
+      "Menandatangani surat tugas KSR untuk LPJ dan mengisi formulir feedback setelah kegiatan selesai."
     ],
     "alur": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Membaca Standar Operasional Prosedur (SOP) kerja sama donor darah.",
+      "Mengecek Jadwal Kegiatan yang tersedia.",
+      "Membuat Surat Permohonan Kerja Sama Donor Darah sesuai format.",
+      "Mengisi Formulir Pengajuan online dan mengunggah dokumen yang diperlukan.",
+      "Melakukan konfirmasi kepada Admin OA KSR PMI Unit Universitas Telkom.",
+      "Pelaksanaan kegiatan donor darah.",
+      "Mengisi Formulir Feedback setelah kegiatan selesai."
     ],
     "cta": {
-      "label": "Konsultasi Donor Darah via WhatsApp",
-      "type": "whatsapp",
-      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mendiskusikan%20kerja%20sama%20untuk%20kegiatan%20donor%20darah."
+      "label": "Ajukan Kerja Sama Donor Darah",
+      "type": "form",
+      "href": "https://docs.google.com/forms/d/e/1FAIpQLScYleYbVG2Dv0i0f7srcDIVGMI3EfhwqPUkwSjI3XGfWOTGLA/viewform"
     },
-    "ikon": "blood"
+    "ikon": "blood",
+    "submission": {
+      "lineId": "@965hrhof",
+      "lineHref": "https://lin.ee/l7UHvDs",
+      "lineQr": "/media/layanan/qr-line-ksr.png",
+      "whatsapp": "0812-8757-3047",
+      "whatsappHref": "https://wa.me/6281287573047",
+      "whatsappQr": "/media/layanan/qr-wa-vadyo.png",
+      "contact": "Vadyo",
+      "sopUrl": "https://docs.google.com/document/d/1wA2Y1gHQrc2Pw6CBvNlgKyO613F40uv_tfBTSZv9sRc/edit?tab=t.0",
+      "scheduleUrl": "https://docs.google.com/spreadsheets/d/17SNQLsqKMMRkoMHQcPVXbdVsCHHcialBdhg7KsRXO8Y/edit?gid=0#gid=0",
+      "donorLetterUrl": "https://docs.google.com/document/d/1kQzdTbo5ZYyu1t5I5NIIUIQriwS3U3zVeMaSETtQTf4/edit?tab=t.0",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScYleYbVG2Dv0i0f7srcDIVGMI3EfhwqPUkwSjI3XGfWOTGLA/viewform",
+      "feedbackUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdP50_LAXEKyywkR9jEcL0zXaeo4NOT2rGNBaR_zwg5bRvW8Q/viewform"
+    },
+    "phone": {
+      "label": "0812-8757-3047",
+      "contact": "Vadyo",
+      "href": "https://wa.me/6281287573047"
+    }
   },
   {
     "slug": "pelatihan",
-    "nama": "Lorem Ipsum Dolor Sit Amet",
-    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "nama": "Pengajuan Siaga Medis & Pelatihan Medis",
+    "ringkas": "Pengajuan kerja sama siaga medis untuk acara serta pelatihan medis untuk sekolah, kampus, dan instansi mitra.",
+    "deskripsi": "Ajukan kerja sama siaga medis atau pelatihan medis melalui OA LINE KSR PMI Unit Universitas Telkom atau WhatsApp narahubung 0858-1000-7760 (Rizky). Lengkapi surat permohonan dan data kegiatan; pengajuan paling lambat H-5 hari kerja sebelum pelaksanaan.",
     "syarat": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Surat permohonan siaga medis atau pelatihan medis sesuai format, ditandatangani dan distempel institusi/panitia, serta mencantumkan Contact Person.",
+      "Untuk siaga medis: lampirkan rundown acara, sediakan posko medis, konsumsi tim, dan akomodasi bila kegiatan lebih dari satu hari.",
+      "Untuk siaga medis: bersedia mengganti biaya obat tambahan di luar persediaan tim.",
+      "Untuk pelatihan medis: jumlah peserta minimal 10 orang.",
+      "Pengajuan paling lambat H-5 hari kerja sebelum pelaksanaan.",
+      "Jika membutuhkan surat ketersediaan siaga medis, buat MoU bermaterai dan serahkan paling lambat H-3."
     ],
     "alur": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Hubungi OA LINE KSR @965hrhof untuk memahami SOP.",
+      "Cek jadwal kegiatan yang tersedia.",
+      "Buat surat permohonan siaga medis atau pelatihan medis sesuai format.",
+      "Isi formulir pengajuan online dan unggah surat serta data kegiatan.",
+      "Konfirmasi ulang kepada admin OA.",
+      "Tunggu konfirmasi; untuk siaga medis, technical meeting dilaksanakan maksimal H-2.",
+      "Pelaksanaan siaga medis atau pelatihan medis.",
+      "Tanda tangan surat tugas untuk keperluan LPJ.",
+      "Isi formulir feedback."
     ],
     "cta": {
-      "label": "Hubungi Divisi Pelatihan via WhatsApp",
-      "type": "whatsapp",
-      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mengajukan%20pelatihan%20untuk%20%3Csekolah%2Finstansi%3E%20dengan%20jumlah%20peserta%20%3Cn%3E."
+      "label": "Ajukan Siaga Medis / Pelatihan via LINE",
+      "type": "form",
+      "href": "https://line.me/R/ti/p/@965hrhof"
     },
-    "ikon": "training"
+    "ikon": "training",
+    "submission": {
+      "lineId": "@965hrhof",
+      "lineHref": "https://lin.ee/l7UHvDs",
+      "lineQr": "/media/layanan/qr-line-ksr.png",
+      "whatsapp": "0858-1000-7760",
+      "whatsappHref": "https://wa.me/6285810007760",
+      "whatsappQr": "/media/layanan/qr-wa-ksr.png",
+      "contact": "Rizky",
+      "sopUrl": "https://docs.google.com/document/d/1iL--LsaPoWJDMaZS-P55xxfxjYyUjS8Ma2t06LIzzQs/edit?tab=t.0",
+      "scheduleUrl": "https://docs.google.com/spreadsheets/d/17SNQLsqKMMRkoMHQcPVXbdVsCHHcialBdhg7KsRXO8Y/edit?gid=0#gid=0",
+      "siagaLetterUrl": "https://docs.google.com/document/d/1taV9mS05W_IVUsQfm2IPPFHb48aMNhfuK35uVe1r2QM/edit?tab=t.0",
+      "trainingLetterUrl": "https://docs.google.com/document/d/1jWpWMMrgDvInD3KtaA1lGMJAij0cenDSO0NFoKeXvXM/edit?tab=t.0",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfnAwGa79JZEa9L7elHVesah1z3Afza4LU-5wFseQPkhXhz1g/viewform",
+      "feedbackUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdP50_LAXEKyywkR9jEcL0zXaeo4NOT2rGNBaR_zwg5bRvW8Q/viewform"
+    },
+    "phone": {
+      "label": "0858-1000-7760",
+      "contact": "Rizky",
+      "href": "https://wa.me/6285810007760"
+    }
   },
   {
-    "slug": "kerja-sama",
-    "nama": "Lorem Ipsum Dolor Sit Amet",
-    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "slug": "peminjaman-barang",
+    "nama": "Peminjaman Barang",
+    "ringkas": "Sewa perlengkapan medis dan peralatan kegiatan KSR PMI Unit Universitas Telkom untuk kebutuhan acara di dalam maupun luar kampus.",
+    "deskripsi": "Ajukan peminjaman melalui formulir resmi. Setelah dikonfirmasi oleh narahubung 0895-0354-3885 (Admin Peminjaman), penyewa menyerahkan surat permohonan hardcopy ke sekretariat KSR dan mengambil barang sesuai jadwal yang disepakati.",
     "syarat": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Permohonan diajukan maksimal H-3 sebelum acara.",
+      "Setelah konfirmasi, serahkan surat permohonan hardcopy ke sekretariat KSR.",
+      "Pembayaran dilakukan lunas saat pengambilan barang.",
+      "Bawa KTM/KTP sebagai jaminan; peminjaman di atas Rp150.000 memerlukan 2 kartu identitas.",
+      "Pembatalan maksimal 3 jam sebelum jadwal dikenakan denda 10% dari total harga.",
+      "Keterlambatan pengembalian dikenakan denda 10% per jam; kerusakan atau kehilangan menjadi tanggung jawab peminjam."
     ],
     "alur": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "Isi formulir peminjaman barang.",
+      "Tunggu konfirmasi ketersediaan dan total biaya dari KSR.",
+      "Ajukan surat permohonan hardcopy ke sekretariat KSR.",
+      "Lakukan pembayaran dan ambil barang sesuai jadwal.",
+      "Kembalikan barang tepat waktu dalam kondisi baik."
     ],
     "cta": {
-      "label": "Diskusikan Kerja Sama via WhatsApp",
-      "type": "whatsapp",
-      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mendiskusikan%20kerja%20sama%20untuk%20%3Ckegiatan%3E."
+      "label": "Ajukan Peminjaman Barang",
+      "type": "form",
+      "href": "https://docs.google.com/forms/d/e/1FAIpQLScmO3qp043xgkw0VDoa84XWQl9U6K5oOJujEq_9eAiQ7qKVxA/viewform"
     },
-    "ikon": "handshake"
+    "phone": {
+      "label": "0895-0354-3885",
+      "contact": "Admin Peminjaman",
+      "href": "https://wa.me/6289503543885"
+    },
+    "ikon": "box",
+    "rental": {
+      "catalog": [
+        {
+          "group": "Alat medis & perawatan",
+          "items": [
+            {
+              "nama": "Set P3K",
+              "harga": "Rp40.000 / hari"
+            },
+            {
+              "nama": "Kirbat Panas",
+              "harga": "Rp7.000 / hari"
+            },
+            {
+              "nama": "Kirbat Dingin",
+              "harga": "Rp8.000 / hari"
+            },
+            {
+              "nama": "Set Kirbat",
+              "harga": "Rp12.000 / hari"
+            },
+            {
+              "nama": "Tandu Lipat",
+              "harga": "Rp50.000 / hari"
+            },
+            {
+              "nama": "Terpal (3,5 × 2,7 m)",
+              "harga": "Rp25.000 / hari"
+            },
+            {
+              "nama": "Set Bidai",
+              "harga": "Rp20.000 / hari"
+            },
+            {
+              "nama": "Mitela",
+              "harga": "Rp1.000 / hari"
+            }
+          ]
+        },
+        {
+          "group": "Perlengkapan kegiatan",
+          "items": [
+            {
+              "nama": "Proyektor",
+              "harga": "Rp100.000 / hari"
+            },
+            {
+              "nama": "Matras Gulung",
+              "harga": "Rp6.000 / hari"
+            },
+            {
+              "nama": "Tali Tambang (L)",
+              "harga": "Rp30.000 / hari"
+            },
+            {
+              "nama": "Tali Tambang (M)",
+              "harga": "Rp20.000 / hari"
+            },
+            {
+              "nama": "Tali Tambang (S)",
+              "harga": "Rp15.000 / hari"
+            },
+            {
+              "nama": "Tali Webing",
+              "harga": "Rp5.000 / hari"
+            },
+            {
+              "nama": "Kursi Roda",
+              "harga": "Rp100.000 / hari"
+            },
+            {
+              "nama": "Kruk",
+              "harga": "Rp15.000 / hari"
+            },
+            {
+              "nama": "Handy Talkie",
+              "harga": "Rp35.000 / hari"
+            },
+            {
+              "nama": "Lampu Emergency",
+              "harga": "Rp10.000 / hari"
+            }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "nama": "Paket 1",
+          "isi": ["Set P3K", "Tandu Lipat"],
+          "harga": "Rp70.000 / hari"
+        },
+        {
+          "nama": "Paket 2",
+          "isi": ["Set P3K", "Tandu Lipat", "Set Bidai"],
+          "harga": "Rp85.000 / hari"
+        }
+      ],
+      "priceListImages": [
+        {
+          "src": "/media/layanan/pricelist-1.webp",
+          "alt": "Poster daftar harga peminjaman barang halaman 1",
+          "width": 900,
+          "height": 1600
+        },
+        {
+          "src": "/media/layanan/pricelist-2.webp",
+          "alt": "Poster daftar harga peminjaman barang halaman 2",
+          "width": 900,
+          "height": 1600
+        },
+        {
+          "src": "/media/layanan/pricelist-3.webp",
+          "alt": "Poster daftar harga dan paket peminjaman barang halaman 3",
+          "width": 900,
+          "height": 1600
+        }
+      ]
+    }
   }
 ]

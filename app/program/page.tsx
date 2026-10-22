@@ -15,9 +15,9 @@ export default function ProgramIndexPage() {
   return (
     <div className="flex w-full flex-col">
       <PageHero
-        eyebrow="Lorem Ipsum Dolor"
-        title="Lorem Ipsum Dolor Sit Amet"
-        lead="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        eyebrow="Program Kerja"
+        title="Katalog Program Kerja Kepengurusan"
+        lead="Daftar program kerja terencana dan berkelanjutan di setiap departemen KSR PMI Unit Universitas Telkom."
       />
 
       <section className="w-full bg-[var(--bg)] px-[clamp(20px,2.8vw,56px)] py-8 lg:py-12">

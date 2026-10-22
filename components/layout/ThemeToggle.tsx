@@ -15,7 +15,7 @@ export function ThemeToggle() {
 
   if (!isClient) {
     return (
-      <div className="h-9 w-9 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] sm:h-10 sm:w-10" />
+      <div className="h-10 w-10 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)]" />
     );
   }
 
@@ -27,17 +27,34 @@ export function ThemeToggle() {
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       data-sound="chime"
       aria-label={isDark ? 'Ganti ke tema terang' : 'Ganti ke tema gelap'}
-      className="flex h-9 w-9 min-w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] text-[var(--fg)] sm:h-10 sm:w-10 sm:min-w-10 transition-colors hover:bg-[var(--surface-warm)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] cursor-pointer"
+      className="flex h-10 w-10 min-w-10 cursor-pointer items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] text-[var(--fg)] transition-colors hover:bg-[var(--surface-warm)] focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:outline-none"
     >
-      {isDark ? (
-        <span title="Mode Terang" className="text-base">
-          ☀
-        </span>
-      ) : (
-        <span title="Mode Gelap" className="text-base">
-          ☾
-        </span>
-      )}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="size-4"
+      >
+        {isDark ? (
+          <>
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="M4.9 4.9l1.4 1.4" />
+            <path d="M17.7 17.7l1.4 1.4" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="M4.9 19.1l1.4-1.4" />
+            <path d="M17.7 6.3l1.4-1.4" />
+          </>
+        ) : (
+          <path d="M20.3 14.7A8.5 8.5 0 0 1 9.3 3.7 8.5 8.5 0 1 0 20.3 14.7Z" />
+        )}
+      </svg>
     </button>
   );
 }

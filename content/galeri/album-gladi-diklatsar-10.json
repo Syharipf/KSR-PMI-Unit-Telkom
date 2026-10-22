@@ -1,32 +1,18 @@
 {
   "slug": "album-gladi-diklatsar-10",
-  "title": "Lorem Ipsum Dolor Sit Amet",
+  "title": "Dokumentasi Gladi Lapangan Diklatsar X",
   "date": "2024-01-20",
   "cover": {
-    "src": "/media/hero/ksr-hero-poster.svg",
-    "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "src": "/media/kegiatan/gladi-lapangan-diklatsar-angkatan-10.svg",
+    "alt": "Latihan simulasi pertolongan pertama di Rancaupas",
     "type": "image",
     "width": 1600,
     "height": 900
   },
   "items": [
     {
-      "src": "/media/hero/ksr-hero-poster.svg",
-      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "type": "image",
-      "width": 1600,
-      "height": 900
-    },
-    {
-      "src": "/media/hero/ksr-hero-poster.svg",
-      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "type": "image",
-      "width": 1600,
-      "height": 900
-    },
-    {
-      "src": "/media/hero/ksr-hero-poster.svg",
-      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "src": "/media/kegiatan/gladi-lapangan-diklatsar-angkatan-10.svg",
+      "alt": "Pemberian instruksi lapangan kepada calon anggota muda",
       "type": "image",
       "width": 1600,
       "height": 900

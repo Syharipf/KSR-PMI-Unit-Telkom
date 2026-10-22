@@ -119,7 +119,8 @@ body {
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
@@ -164,6 +165,7 @@ body {
   --amb-shoulder: #d9cbbb;
   --amb-pole: #6f6357;
   --amb-beam: #ffd9a0;
+  --amb-strobe-blue: #2f7bff;
   position: relative;
   width: 100%;
   height: var(--amb-h);
@@ -189,6 +191,7 @@ body {
   --amb-shoulder: #1d1d22;
   --amb-pole: #5b5349;
   --amb-beam: #ffcf86;
+  --amb-strobe-blue: #4f9dff;
 }
 
 .ambulance-road::after {
@@ -245,8 +248,33 @@ body {
   bottom: 9px;
   z-index: 3;
   width: clamp(168px, 17vw, 240px);
-  animation: ambulance-drive 13s linear infinite;
+  animation: ambulance-drive 15s linear infinite;
   will-change: transform;
+}
+
+/* Dua pengawal motor di belakang ambulans, satu irama dengan animasi jalan */
+.ambulance-bike {
+  position: absolute;
+  bottom: 9px;
+  z-index: 2;
+  animation: ambulance-drive 15s linear infinite;
+  will-change: transform;
+}
+
+.ambulance-bike svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ambulance-bike--sport {
+  left: calc(-1 * clamp(92px, 9.2vw, 122px));
+  width: clamp(72px, 7.2vw, 100px);
+}
+
+.ambulance-bike--pcx {
+  left: calc(-1 * clamp(170px, 17vw, 232px));
+  width: clamp(58px, 5.8vw, 82px);
 }
 
 .ambulance-suspension {
@@ -275,10 +303,10 @@ body {
 
 @keyframes ambulance-drive {
   from {
-    transform: translateX(-20vw);
+    transform: translateX(-260px);
   }
   to {
-    transform: translateX(108vw);
+    transform: translateX(calc(100vw / var(--ui-zoom) + 320px));
   }
 }
 
@@ -365,9 +393,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ambulance-vehicle {
+  .ambulance-vehicle,
+  .ambulance-bike {
     animation: none !important;
-    transform: translateX(22vw);
+    transform: translateX(50vw);
   }
   .ambulance-suspension,
   .ambulance-wheel,
@@ -385,15 +414,17 @@ body {
 }
 /* Denyut EKG menyapu sepanjang garis */
 .ecg-trace {
-  stroke-dasharray: 240 1440;
-  animation: ecg-run 5.4s linear infinite;
+  opacity: 0.72;
 }
 
 .ecg-glow {
+  filter: blur(3px);
+  opacity: 0.45;
+}
+
+.ecg-sweep {
   stroke-dasharray: 240 1440;
   animation: ecg-run 5.4s linear infinite;
-  filter: blur(3px);
-  opacity: 0.55;
 }
 
 @keyframes ecg-run {
@@ -454,12 +485,14 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ecg-trace,
-  .ecg-glow,
+  .ecg-sweep,
   .siren-sweep::after,
   .cross-drift,
   .cross-drift-slow {
     animation: none !important;
+  }
+  .ecg-sweep {
+    display: none;
   }
 }
 
@@ -610,11 +643,7 @@ body {
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse at 50% 45%,
-    transparent 52%,
-    var(--sc-vignette) 100%
-  );
+  background: radial-gradient(ellipse at 50% 45%, transparent 52%, var(--sc-vignette) 100%);
 }
 
 .scene-progress {
@@ -1001,118 +1030,123 @@ body {
   }
 }
 
-/* Kartu pengurus berpotret penuh */
+/* Kartu pengurus: potret menempel di kiri, identitas di kanan */
 .cabinet-card {
   position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  isolation: isolate;
-  width: 100%;
-  max-width: 360px;
-  margin-inline: auto;
   transition:
-    transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 300ms ease,
-    box-shadow 450ms ease;
+    transform 260ms var(--ease-standard),
+    border-color 220ms ease,
+    box-shadow 260ms ease;
 }
 
 .cabinet-card:hover {
-  transform: translateY(-6px);
-  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
-  box-shadow: 0 32px 60px -42px color-mix(in oklab, var(--accent) 70%, transparent);
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+  box-shadow: 0 18px 34px -30px color-mix(in oklab, var(--accent) 60%, transparent);
 }
 
 .cabinet-media {
   position: relative;
-  aspect-ratio: 4 / 5;
+  flex: none;
+  width: clamp(132px, 11vw, 176px);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--surface-warm);
 }
 
 .cabinet-photo {
-  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 600ms var(--ease-cinematic);
 }
 
 .cabinet-card:hover .cabinet-photo {
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 
-.cabinet-overlay {
-  position: absolute;
-  inset: auto 0 0 0;
+.cabinet-body {
+  position: relative;
   display: flex;
+  flex: 1;
+  min-width: 0;
   flex-direction: column;
+  justify-content: center;
   gap: 0.15rem;
-  padding: 1.1rem 1.15rem 1.15rem;
-  color: #fff;
-  background: linear-gradient(
-    to top,
-    rgb(8 10 12 / 0.88) 0%,
-    rgb(8 10 12 / 0.55) 45%,
-    transparent 100%
-  );
+  padding: 0.85rem 1rem;
+  border-left: 1px solid color-mix(in oklab, var(--accent) 20%, var(--border));
 }
 
-.cabinet-card--featured .cabinet-overlay {
-  padding: 1.5rem 1.5rem 1.6rem;
+.cabinet-index {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.05rem;
+  z-index: 0;
+  font-family: var(--font-mono);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  color: color-mix(in oklab, var(--accent) 9%, transparent);
+  pointer-events: none;
+  user-select: none;
 }
 
 .cabinet-card--featured {
-  max-width: 640px;
+  border-color: color-mix(in oklab, var(--accent) 34%, var(--border));
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-warm) 100%);
+}
+
+.cabinet-card--featured .cabinet-body {
+  padding: 1rem 1.4rem;
+}
+
+.cabinet-card--featured .cabinet-index {
+  font-size: 3.4rem;
 }
 
 .cabinet-role {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--accent) 70%, #fff);
+  color: var(--accent);
 }
 
 .cabinet-name {
-  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.05rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.01em;
+  color: var(--fg);
+  overflow-wrap: anywhere;
 }
 
 .cabinet-card--featured .cabinet-name {
-  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  font-size: 1.6rem;
 }
 
 .cabinet-meta {
-  font-size: 0.8rem;
-  color: rgb(255 255 255 / 0.72);
-}
-
-/* Kilau menyapu saat kursor mendekat */
-.cabinet-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(
-    115deg,
-    transparent 38%,
-    rgb(255 255 255 / 0.16) 50%,
-    transparent 62%
-  );
-  transform: translateX(-130%);
-  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.cabinet-card:hover::after {
-  transform: translateX(130%);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--muted);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cabinet-card,
-  .cabinet-photo,
-  .cabinet-card::after {
+  .cabinet-photo {
     transition: none;
   }
 }
@@ -1129,6 +1163,7 @@ body {
 }
 
 .org-chart {
+  --org-line: color-mix(in oklab, var(--fg) 24%, transparent);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1149,7 +1184,7 @@ body {
   position: relative;
   width: 1px;
   height: var(--org-stem-h, 2rem);
-  background: var(--border);
+  background: var(--org-line);
 }
 
 .org-stem--dept {
@@ -1161,9 +1196,43 @@ body {
   background: none;
   background-image: repeating-linear-gradient(
     to bottom,
-    var(--border) 0 5px,
+    var(--org-line) 0 5px,
     transparent 5px 10px
   );
+}
+
+/* Baris staf: rel horizontal dengan cabang turun ke tiap kartu */
+@media (min-width: 768px) {
+  .org-tier--staff {
+    --org-staff-drop: 1.5rem;
+    position: relative;
+    padding-top: var(--org-staff-drop);
+  }
+
+  .org-tier--staff > .org-card::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(var(--org-staff-drop) * -1);
+    width: 1px;
+    height: var(--org-staff-drop);
+    background: var(--org-line);
+  }
+
+  /* Setengah rel kanan; kartu berikutnya menyambung setengah kirinya */
+  .org-tier--staff > .org-card::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: calc(-50% - 1rem);
+    top: calc(var(--org-staff-drop) * -1);
+    height: 1px;
+    background: var(--org-line);
+  }
+
+  .org-tier--staff > .org-card:last-child::after {
+    display: none;
+  }
 }
 
 .org-card {
@@ -1287,81 +1356,164 @@ body {
   background: color-mix(in oklab, var(--accent) 70%, transparent);
 }
 
-/* Cabang departemen: satu baris dengan rel horizontal di layar lebar */
+/* Cabang departemen — bagan pohon responsif.
+   Ponsel: satu kolom dengan tulang penghubung di kiri.
+   Tablet: dua baris tiga kartu, masing-masing bergantung pada rel.
+   Desktop: enam divisi sejajar dalam satu baris. */
 .org-branch {
-  --org-branch-gap: clamp(3rem, 3.2vw, 4rem);
+  --org-branch-gap: clamp(1.25rem, 1.8vw, 2rem);
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(0.75rem, 1.1vw, 1.35rem);
-  padding-top: var(--org-branch-gap);
-}
-
-.org-branch::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 8.33%;
-  right: 8.33%;
-  height: 1px;
-  background: var(--border);
-}
-
-.org-branch > .org-card {
   width: 100%;
 }
 
-.org-branch > .org-card::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: calc(var(--org-branch-gap, 2.75rem) * -1);
-  width: 1px;
-  height: var(--org-branch-gap, 2.75rem);
-  background: var(--border);
+.org-branch__row {
+  display: contents;
 }
 
-/* Layar sempit: cabang berubah menjadi daftar bertulang tunggal */
-@media (max-width: 1279px) {
-  .org-stem--dept {
-    display: none;
+.org-branch .org-card--dept {
+  position: relative;
+  width: 100%;
+}
+
+/* Ponsel: daftar satu kolom dengan tulang pohon di kiri */
+@media (max-width: 767px) {
+  .org-branch {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding-left: 1.75rem;
   }
 
+  /* Garis dari simpul induk menuju tulang kiri */
+  .org-branch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 50%;
+    height: 1px;
+    background: var(--org-line);
+  }
+
+  .org-branch .org-card--dept::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 1.65rem;
+    width: 1.75rem;
+    height: 1px;
+    background: var(--org-line);
+  }
+
+  .org-branch .org-card--dept::after {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 0;
+    width: 1px;
+    height: calc(100% + 0.85rem);
+    background: var(--org-line);
+  }
+
+  .org-branch__row:last-child .org-card--dept:last-child::after {
+    height: 1.65rem;
+  }
+}
+
+@media (min-width: 768px) {
   .org-branch {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-    margin-left: 1.25rem;
-    padding-top: 0;
+    gap: var(--org-branch-gap);
     padding-left: 1.5rem;
-    border-left: 1px solid var(--border);
-  }
-
-  .org-branch > .org-card::before {
-    top: 1.85rem;
   }
 
   .org-branch::before {
     display: none;
   }
 
-  .org-branch > .org-card::before {
-    left: -1.5rem;
-    top: 1.85rem;
-    width: 1.5rem;
-    height: 1px;
+  .org-branch__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: clamp(0.85rem, 1.4vw, 1.4rem);
+    padding-top: var(--org-branch-gap);
   }
 
-  .org-branch > .org-card::after {
+  /* Rel horizontal di atas baris, berakhir di tengah kartu terakhir */
+  .org-branch__row::before {
     content: '';
     position: absolute;
-    left: -1.72rem;
-    top: 1.68rem;
-    width: 6px;
-    height: 6px;
-    border-radius: 999px;
-    background: var(--accent);
+    top: 0;
+    left: -1.5rem;
+    right: calc(100% / 6);
+    height: 1px;
+    background: var(--org-line);
+  }
+
+  /* Tulang dari rel baris ini menuju rel baris berikutnya */
+  .org-branch__row::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: calc(var(--org-branch-gap) * -1);
+    left: -1.5rem;
+    width: 1px;
+    background: var(--org-line);
+  }
+
+  .org-branch__row:last-child::after {
+    display: none;
+  }
+
+  .org-branch .org-card--dept::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(var(--org-branch-gap) * -1);
+    width: 1px;
+    height: var(--org-branch-gap);
+    background: var(--org-line);
+  }
+
+  .org-branch .org-card--dept::after {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .org-branch {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(0.6rem, 0.9vw, 1rem);
+    padding-top: var(--org-branch-gap);
+    padding-left: 0;
+  }
+
+  .org-branch::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: calc(100% / 12);
+    right: calc(100% / 12);
+    height: 1px;
+    background: var(--org-line);
+  }
+
+  .org-branch__row {
+    display: contents;
+  }
+
+  .org-branch .org-card--dept::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(var(--org-branch-gap) * -1);
+    width: 1px;
+    height: var(--org-branch-gap);
+    background: var(--org-line);
   }
 }
 
@@ -1373,10 +1525,6 @@ body {
 
 /* Kerapatan kartu cabang pada layar 1280–1539px */
 @media (min-width: 1280px) and (max-width: 1539px) {
-  .org-branch {
-    gap: 0.85rem;
-  }
-
   .org-card--dept {
     padding: 0.95rem 1rem;
   }
@@ -1462,18 +1610,47 @@ body {
     animation-range: entry 0% entry 40%;
   }
 
-  .org-branch::before {
+  .org-branch::before,
+  .org-branch__row::before {
     transform-origin: left center;
     animation: org-line-x linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 35%;
   }
 
-  .org-branch > .org-card::before {
+  .org-branch__row::after {
+    transform-origin: top center;
+    animation: org-line-y linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .org-branch .org-card--dept::before {
     transform-origin: top center;
     animation: org-line-y linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 30%;
+  }
+
+  .org-tier--staff > .org-card::before {
+    transform-origin: top center;
+    animation: org-line-y linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+
+  .org-tier--staff > .org-card::after {
+    transform-origin: left center;
+    animation: org-line-x linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+
+  @media (max-width: 767px) {
+    .org-branch .org-card--dept::before {
+      transform-origin: left center;
+      animation-name: org-line-x;
+    }
   }
 }
 
@@ -1481,7 +1658,11 @@ body {
   .org-card,
   .org-stem,
   .org-branch::before,
-  .org-branch > .org-card::before {
+  .org-branch__row::before,
+  .org-branch__row::after,
+  .org-branch .org-card--dept::before,
+  .org-tier--staff > .org-card::before,
+  .org-tier--staff > .org-card::after {
     animation: none !important;
   }
 }
@@ -1513,11 +1694,7 @@ body {
 /* Alur penggabungan tiga akar unit — garis putus bergerak */
 .merge-flow {
   width: 100%;
-  background-image: repeating-linear-gradient(
-    90deg,
-    var(--accent) 0 10px,
-    transparent 10px 20px
-  );
+  background-image: repeating-linear-gradient(90deg, var(--accent) 0 10px, transparent 10px 20px);
   animation: merge-flow 1.1s linear infinite;
 }
 
@@ -1596,5 +1773,30 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .menu-drawer {
     animation: none;
+  }
+}
+
+/* ============================================================
+   Kepadatan tampilan layar lebar.
+   Pada monitor besar seluruh halaman diskalakan 75% sehingga
+   komposisinya sama dengan tampilan peramban pada zoom 75%.
+   --ui-zoom dipakai juga oleh tinggi hero dan tinggi minimum body
+   agar tidak menyisakan ruang kosong di bawah viewport.
+   ============================================================ */
+:root {
+  --ui-zoom: 1;
+}
+
+body.app-body {
+  min-height: calc(100vh / var(--ui-zoom));
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --ui-zoom: 0.75;
+  }
+
+  body.app-body {
+    zoom: var(--ui-zoom);
   }
 }

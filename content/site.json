@@ -1,10 +1,10 @@
 {
   "name": "KSR PMI Unit Universitas Telkom",
   "shortName": "KSR PMI Tel-U",
-  "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "tagline": "Bakti Kemanusiaan, Kesiapsiagaan Medis, dan Kebersamaan Relawan.",
   "description": "Situs profil resmi Korps Suka Rela Palang Merah Indonesia Unit Universitas Telkom. Menyajikan informasi sejarah, kepengurusan, kegiatan siaga medis, donor darah, dan pendaftaran relawan.",
   "url": "https://ksrpmi.telkomuniversity.ac.id",
-  "contentStatus": "dummy",
+  "contentStatus": "final",
   "foundedAt": "2013-11-10",
   "decree": "KEP.010/ORG22/WR4.0/2014",
   "affiliation": "Palang Merah Indonesia Kabupaten Bandung",
@@ -52,22 +52,22 @@
   },
   "stats": [
     {
-      "label": "Lorem ipsum dolor",
-      "value": 11,
+      "label": "Tahun Pengabdian",
+      "value": 13,
       "suffix": " Tahun"
     },
     {
-      "label": "Consectetur adipiscing elit",
+      "label": "Relawan Aktif",
       "value": 78,
       "suffix": "+"
     },
     {
-      "label": "Sed do eiusmod tempor",
+      "label": "Kantong Darah Terkumpul",
       "value": 1250,
       "suffix": "+"
     },
     {
-      "label": "Ut labore et dolore",
+      "label": "Aksi Siaga & Pelatihan",
       "value": 140,
       "suffix": "+"
     }

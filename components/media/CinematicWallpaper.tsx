@@ -61,21 +61,33 @@ export function CinematicWallpaper({
     >
       <div className="absolute inset-0" style={{ opacity: `var(--wallpaper-opacity, ${opacity})` }}>
         {hasStills ? (
-          slides.map((src, index) => (
-            <div
-              key={src}
-              className="absolute inset-0 transition-opacity duration-[1800ms] ease-[var(--ease-cinematic)]"
-              style={{ opacity: index === active ? 1 : 0 }}
-            >
+          slides.map((src, index) => {
+            const isActive = index === active;
+            return (
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-[9000ms] ease-out"
+                key={src}
+                className="absolute inset-0 transition-opacity duration-[2600ms] ease-in-out will-change-[opacity]"
                 style={{
-                  backgroundImage: `url("${src}")`,
-                  transform: index === active ? 'scale(1.07)' : 'scale(1)',
+                  opacity: isActive ? 1 : 0,
+                  zIndex: isActive ? 2 : 1,
                 }}
-              />
-            </div>
-          ))
+              >
+                {/* Lapisan ambient blur pengisi latar */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center blur-3xl scale-110 opacity-40"
+                  style={{ backgroundImage: `url("${src}")` }}
+                />
+                {/* Foto utama: pas 100% utuh tanpa terpotong atas maupun bawah */}
+                <div
+                  className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-[10000ms] ease-out will-change-transform"
+                  style={{
+                    backgroundImage: `url("${src}")`,
+                    transform: isActive ? 'scale(1.015)' : 'scale(1)',
+                  }}
+                />
+              </div>
+            );
+          })
         ) : sources.mp4 ? (
           <video
             ref={videoRef}
@@ -86,7 +98,7 @@ export function CinematicWallpaper({
             preload="metadata"
             disablePictureInPicture
             poster={sources.poster}
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-top"
           >
             {sources.webm && <source src={sources.webm} type="video/webm" />}
             <source src={sources.mp4} type="video/mp4" />
@@ -94,13 +106,13 @@ export function CinematicWallpaper({
         ) : (
           <div
             style={{ backgroundImage: `url("${sources.poster}")` }}
-            className="h-full w-full bg-cover bg-center"
+            className="h-full w-full bg-cover bg-top"
           />
         )}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg)]/55 via-[var(--bg)]/20 to-[var(--bg)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)]/35 via-transparent to-[var(--bg)]/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg)]/35 via-transparent to-[var(--bg)]/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)]/25 via-transparent to-[var(--bg)]/10" />
     </div>
   );
 }
