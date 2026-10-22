@@ -1,0 +1,108 @@
+/* design/tokens.css — KSR PMI Unit Universitas Telkom
+ * Canonical compiled tokens. Mirrors DESIGN.md §2–§8 and OpenDesign token slots.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Color — light */
+  --bg: #faf7f3;
+  --surface: #ffffff;
+  --surface-warm: #f2e9de;
+  --fg: #15171a;
+  --fg-2: #3a3f45;
+  --muted: #6b6f75;
+  --meta: #8a8d92;
+  --border: #e2d9cf;
+  --border-soft: #efe8e0;
+  --accent: #e4002b;
+  --accent-on: #ffffff;
+  --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+  --accent-active: color-mix(in oklab, var(--accent), black 14%);
+  --success: #16794a;
+  --warn: #a96000;
+  --danger: #b3261e;
+
+  /* Typography */
+  --font-display: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 17px;
+  --text-lg: 20px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+  --text-4xl: 48px;
+
+  --leading-body: 1.6;
+  --leading-tight: 1.05;
+  --tracking-display: -0.03em;
+
+  /* Space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* Layout */
+  --section-y-desktop: 96px;
+  --section-y-tablet: 72px;
+  --section-y-phone: 48px;
+  --container-max: 1200px;
+  --container-gutter-desktop: 40px;
+  --container-gutter-tablet: 32px;
+  --container-gutter-phone: 20px;
+
+  /* Radius & elevation */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 24px 64px rgb(21 23 26 / 0.14);
+  --focus-ring: 0 0 0 4px color-mix(in oklab, var(--accent), transparent 72%);
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-base: 240ms;
+  --motion-slow: 600ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Media & chrome */
+  --wallpaper-opacity: 0.55;
+  --header-h: 72px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0b0b0d;
+  --surface: #141417;
+  --surface-warm: #1d1d22;
+  --fg: #f7f4ef;
+  --fg-2: #d5d0c9;
+  --muted: #a29c94;
+  --meta: #7c7770;
+  --border: #2b2b31;
+  --border-soft: #202025;
+  --accent: #ff3b47;
+  --accent-on: #0b0b0d;
+  --accent-hover: color-mix(in oklab, var(--accent), white 8%);
+  --accent-active: color-mix(in oklab, var(--accent), white 14%);
+  --success: #4ade80;
+  --warn: #fbbf24;
+  --danger: #f87171;
+
+  --elev-raised: 0 24px 64px rgb(0 0 0 / 0.5);
+  --focus-ring: 0 0 0 4px color-mix(in oklab, var(--accent), transparent 64%);
+  --wallpaper-opacity: 0.3;
+}

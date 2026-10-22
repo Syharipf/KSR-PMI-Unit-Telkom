@@ -1,0 +1,28 @@
+{
+  "slug": "album-donor-darah-kampus-2024",
+  "title": "Lorem Ipsum Dolor Sit Amet",
+  "date": "2024-03-15",
+  "cover": {
+    "src": "/media/hero/ksr-hero-poster.svg",
+    "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "type": "image",
+    "width": 1600,
+    "height": 900
+  },
+  "items": [
+    {
+      "src": "/media/hero/ksr-hero-poster.svg",
+      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "type": "image",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/media/hero/ksr-hero-poster.svg",
+      "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "type": "image",
+      "width": 1600,
+      "height": 900
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "tahun": "2023",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "peringkat": "Lorem ipsum dolor sit amet",
+    "tingkat": "nasional",
+    "penyelenggara": "Lorem Ipsum Foundation"
+  },
+  {
+    "tahun": "2023",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "peringkat": "Lorem ipsum dolor sit amet",
+    "tingkat": "nasional",
+    "penyelenggara": "Dolor Sit Amet Institute"
+  },
+  {
+    "tahun": "2022",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "peringkat": "Lorem ipsum dolor sit amet",
+    "tingkat": "universitas",
+    "penyelenggara": "Lorem Ipsum Foundation"
+  },
+  {
+    "tahun": "2022",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "peringkat": "Lorem ipsum dolor sit amet",
+    "tingkat": "universitas",
+    "penyelenggara": "Dolor Sit Amet Institute"
+  },
+  {
+    "tahun": "2021",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "peringkat": "Lorem ipsum dolor sit amet",
+    "tingkat": "nasional",
+    "penyelenggara": "Lorem Ipsum Foundation"
+  },
+  {
+    "tahun": "2020",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "peringkat": "Lorem ipsum dolor sit amet",
+    "tingkat": "nasional",
+    "penyelenggara": "Dolor Sit Amet Institute"
+  }
+]

@@ -1,0 +1,664 @@
+{
+  "periode": "2026-2027",
+  "motto": "Memimpin dengan hati, mengabdi dengan semangat.",
+  "komandan": {
+    "nama": "Darren",
+    "jabatan": "Komandan",
+    "foto": {
+      "src": "/media/kepengurusan/2026-2027/darren.jpg",
+      "alt": "Foto Darren",
+      "type": "image",
+      "width": 560,
+      "height": 560
+    }
+  },
+  "wakil": [
+    {
+      "nama": "Azis",
+      "jabatan": "Wakil Komandan",
+      "angkatan": "XII",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/azis.jpg",
+        "alt": "Foto Azis",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    }
+  ],
+  "inti": [
+    {
+      "nama": "Novelin",
+      "jabatan": "Sekretaris 1",
+      "angkatan": "XII",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/novelin.jpg",
+        "alt": "Foto Novelin",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Mifdlal",
+      "jabatan": "Sekretaris 2",
+      "angkatan": "XII",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/mifdlal.jpg",
+        "alt": "Foto Mifdlal",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Masayu",
+      "jabatan": "Bendahara",
+      "angkatan": "XII",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/masayu.jpg",
+        "alt": "Foto Masayu",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    }
+  ],
+  "pengawas": [
+    {
+      "nama": "James",
+      "jabatan": "Kapten Badan Pengawas",
+      "angkatan": "XI",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/james.jpg",
+        "alt": "Foto James",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Dhafin",
+      "jabatan": "BP Komandan & Sekretaris",
+      "angkatan": "XI",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/dhafin.jpg",
+        "alt": "Foto Dhafin",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Fajar",
+      "jabatan": "BP Wakil Komandan & Pengmas",
+      "angkatan": "XI",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/fajar.jpg",
+        "alt": "Foto Fajar",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Melati",
+      "jabatan": "BP Kominfo & Bendahara",
+      "angkatan": "XI",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/melati.jpg",
+        "alt": "Foto Melati",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Rein",
+      "jabatan": "BP Pengmas & Orgata",
+      "angkatan": "XI",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/rein.jpg",
+        "alt": "Foto Rein",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Alief",
+      "jabatan": "BP Diklat & Wirlog",
+      "angkatan": "XI",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/alief.jpg",
+        "alt": "Foto Alief",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Joan",
+      "jabatan": "BP Humas & Kominfo",
+      "angkatan": "XI",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/joan.jpg",
+        "alt": "Foto Joan",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    }
+,
+    {
+      "nama": "Hisyam",
+      "jabatan": "BP Humas",
+      "angkatan": "X",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/hisyam.jpg",
+        "alt": "Foto Hisyam",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    },
+    {
+      "nama": "Udin",
+      "jabatan": "BP Wirlog",
+      "angkatan": "X",
+      "foto": {
+        "src": "/media/kepengurusan/2026-2027/udin.jpg",
+        "alt": "Foto Udin",
+        "type": "image",
+        "width": 560,
+        "height": 560
+      }
+    }
+  ],
+  "divisi": [
+    {
+      "slug": "diklat",
+      "nama": "Pendidikan & Pelatihan",
+      "anggota": [
+        {
+          "nama": "Neilson",
+          "jabatan": "Kepala Divisi",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/neilson.jpg",
+            "alt": "Foto Neilson",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Syarif",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/syarif.jpg",
+            "alt": "Foto Syarif",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Radif",
+          "jabatan": "Anggota",
+          "angkatan": "XI",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/radif.jpg",
+            "alt": "Foto Radif",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Naufal",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/naufal.jpg",
+            "alt": "Foto Naufal",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Shofa",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/shofa.jpg",
+            "alt": "Foto Shofa",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Biru",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/biru.jpg",
+            "alt": "Foto Biru",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+      ]
+    },
+    {
+      "slug": "humas",
+      "nama": "Hubungan Masyarakat",
+      "anggota": [
+        {
+          "nama": "Syaza",
+          "jabatan": "Kepala Divisi",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/syaza.jpg",
+            "alt": "Foto Syaza",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Aina",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/aina.jpg",
+            "alt": "Foto Aina",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Salma",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/salma.jpg",
+            "alt": "Foto Salma",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Ahmad",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/ahmad.jpg",
+            "alt": "Foto Ahmad",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Emir",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/emir.jpg",
+            "alt": "Foto Emir",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Aisyah",
+          "jabatan": "Anggota",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/aisyah.jpg",
+            "alt": "Foto Aisyah",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pengmas",
+      "nama": "Pengabdian Masyarakat",
+      "anggota": [
+        {
+          "nama": "Agung",
+          "jabatan": "Kepala Divisi",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/agung.jpg",
+            "alt": "Foto Agung",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Anggie",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/anggie.jpg",
+            "alt": "Foto Anggie",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Nayla",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/nayla.jpg",
+            "alt": "Foto Nayla",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Chris",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/chris.jpg",
+            "alt": "Foto Chris",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Najmi",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/najmi.jpg",
+            "alt": "Foto Najmi",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Hanaan",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/hanaan.jpg",
+            "alt": "Foto Hanaan",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Vadyo",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/vadyo.jpg",
+            "alt": "Foto Vadyo",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+,
+        {
+          "nama": "Rizki",
+          "jabatan": "Anggota",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/rizki.jpg",
+            "alt": "Foto Rizki",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+      ]
+    },
+    {
+      "slug": "orgata",
+      "nama": "Organisasi & Keanggotaan",
+      "anggota": [
+        {
+          "nama": "Maria",
+          "jabatan": "Kepala Divisi",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/maria.jpg",
+            "alt": "Foto Maria",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Frisya",
+          "jabatan": "Anggota",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/frisya.jpg",
+            "alt": "Foto Frisya",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Fathur",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/fathur.jpg",
+            "alt": "Foto Fathur",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Pipit",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/pipit.jpg",
+            "alt": "Foto Pipit",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Desy",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/desy.jpg",
+            "alt": "Foto Desy",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Dion",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/dion.jpg",
+            "alt": "Foto Dion",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+,
+        {
+          "nama": "Daffa",
+          "jabatan": "Anggota",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/daffa.jpg",
+            "alt": "Foto Daffa",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+      ]
+    },
+    {
+      "slug": "kominfo",
+      "nama": "Komunikasi & Informasi",
+      "anggota": [
+        {
+          "nama": "Raisa",
+          "jabatan": "Kepala Divisi",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/raisa.jpg",
+            "alt": "Foto Raisa",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Dillah",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/dillah.jpg",
+            "alt": "Foto Dillah",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Man",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/man.jpg",
+            "alt": "Foto Man",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Dharma",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/dharma.jpg",
+            "alt": "Foto Dharma",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+,
+        {
+          "nama": "Rizqi",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/rizqi.jpg",
+            "alt": "Foto Rizqi",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wirlog",
+      "nama": "Wiralogi & Usaha",
+      "anggota": [
+        {
+          "nama": "Lintang",
+          "jabatan": "Kepala Divisi",
+          "angkatan": "XII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/lintang.jpg",
+            "alt": "Foto Lintang",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Meyriska",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/meyriska.jpg",
+            "alt": "Foto Meyriska",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Dava",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/dava.jpg",
+            "alt": "Foto Dava",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        },
+        {
+          "nama": "Daningsih",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/daningsih.jpg",
+            "alt": "Foto Daningsih",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+,
+        {
+          "nama": "Gibran",
+          "jabatan": "Anggota",
+          "angkatan": "XIII",
+          "foto": {
+            "src": "/media/kepengurusan/2026-2027/gibran.jpg",
+            "alt": "Foto Gibran",
+            "type": "image",
+            "width": 560,
+            "height": 560
+          }
+        }
+      ]
+    }
+  ]
+}

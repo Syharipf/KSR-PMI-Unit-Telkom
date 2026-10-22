@@ -1,0 +1,58 @@
+{
+  "periode": "2023-2024",
+  "motto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "komandan": {
+    "nama": "Lorem Ipsum",
+    "jabatan": "Lorem Ipsum Dolor",
+    "programStudi": "Lorem ipsum dolor sit amet",
+    "angkatan": "2020"
+  },
+  "wakil": [
+    {
+      "nama": "Dolor Sit Amet",
+      "jabatan": "Lorem Ipsum Dolor",
+      "programStudi": "Lorem ipsum dolor sit amet",
+      "angkatan": "2020"
+    }
+  ],
+  "inti": [
+    {
+      "nama": "Consectetur Adipiscing",
+      "jabatan": "Lorem Ipsum Dolor",
+      "programStudi": "Lorem ipsum dolor sit amet",
+      "angkatan": "2021"
+    },
+    {
+      "nama": "Sed Do Eiusmod",
+      "jabatan": "Lorem Ipsum Dolor",
+      "programStudi": "Lorem ipsum dolor sit amet",
+      "angkatan": "2021"
+    }
+  ],
+  "divisi": [
+    {
+      "slug": "operasional-bencana",
+      "nama": "Lorem Ipsum Dolor Sit Amet",
+      "anggota": [
+        {
+          "nama": "Tempor Incididunt",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2021"
+        }
+      ]
+    },
+    {
+      "slug": "pendidikan-pelatihan",
+      "nama": "Lorem Ipsum Dolor Sit Amet",
+      "anggota": [
+        {
+          "nama": "Ut Labore Et Dolore",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2021"
+        }
+      ]
+    }
+  ]
+}

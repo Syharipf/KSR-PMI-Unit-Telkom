@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#ffffff" />
+  <g transform="translate(100, 100)">
+    <!-- Red Cross: 5 equal squares (each 40x40, total 200x200) -->
+    <rect x="80" y="0" width="40" height="200" fill="#e4002b" />
+    <rect x="0" y="80" width="200" height="40" fill="#e4002b" />
+  </g>
+</svg>

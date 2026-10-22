@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#120f0b"/>
+      <stop offset="0.4" stop-color="#3a2818"/>
+      <stop offset="0.72" stop-color="#8a5a2a"/>
+      <stop offset="1" stop-color="#c98a45"/>
+    </linearGradient>
+    <radialGradient id="sun3" cx="0.66" cy="0.34" r="0.42">
+      <stop offset="0" stop-color="#ffe2ac" stop-opacity="0.85"/>
+      <stop offset="0.45" stop-color="#ffbe6f" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#ffbe6f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig3" cx="0.5" cy="0.4" r="0.8">
+      <stop offset="0.5" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.62"/>
+    </radialGradient>
+    <filter id="soft3" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="far3" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="grain3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.84" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky3)"/>
+  <rect width="1600" height="900" fill="url(#sun3)"/>
+
+  <g fill="#100b07" opacity="0.42" filter="url(#far3)">
+    <path d="M80 620 L360 400 L640 620 Z"/>
+    <path d="M560 650 L820 430 L1080 650 Z"/>
+    <path d="M1010 660 L1300 440 L1590 660 Z"/>
+  </g>
+
+  <g fill="#0b0705" filter="url(#soft3)">
+    <path d="M860 700 L1070 520 L1280 700 Z"/>
+    <rect x="1058" y="640" width="24" height="210"/>
+    <path d="M940 726 Q1070 656 1200 726 L1210 900 L930 900 Z" opacity="0.55"/>
+
+    <g transform="translate(170 560)">
+      <circle cx="60" cy="42" r="34"/>
+      <path d="M6 88 Q60 54 114 88 L138 390 H-18 Z"/>
+    </g>
+    <g transform="translate(360 590)">
+      <circle cx="56" cy="40" r="30"/>
+      <path d="M8 82 Q56 52 104 82 L126 368 H-14 Z"/>
+    </g>
+    <g transform="translate(520 548)">
+      <circle cx="62" cy="44" r="36"/>
+      <path d="M4 90 Q62 52 120 90 L146 410 H-22 Z"/>
+    </g>
+    <g transform="translate(1330 580)">
+      <circle cx="58" cy="42" r="32"/>
+      <path d="M8 86 Q58 54 108 86 L132 382 H-16 Z"/>
+    </g>
+
+    <rect x="640" y="748" width="180" height="18" rx="7"/>
+    <rect x="660" y="766" width="16" height="120"/>
+    <rect x="784" y="766" width="16" height="120"/>
+  </g>
+
+  <rect width="1600" height="900" filter="url(#grain3)" opacity="0.55"/>
+  <rect width="1600" height="900" fill="url(#vig3)"/>
+</svg>

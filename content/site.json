@@ -1,0 +1,155 @@
+{
+  "name": "KSR PMI Unit Universitas Telkom",
+  "shortName": "KSR PMI Tel-U",
+  "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "description": "Situs profil resmi Korps Suka Rela Palang Merah Indonesia Unit Universitas Telkom. Menyajikan informasi sejarah, kepengurusan, kegiatan siaga medis, donor darah, dan pendaftaran relawan.",
+  "url": "https://ksrpmi.telkomuniversity.ac.id",
+  "contentStatus": "dummy",
+  "foundedAt": "2013-11-10",
+  "decree": "KEP.010/ORG22/WR4.0/2014",
+  "affiliation": "Palang Merah Indonesia Kabupaten Bandung",
+  "university": "Universitas Telkom",
+  "period": "2026-2027",
+  "address": {
+    "label": "Sekretariat KSR PMI Unit Universitas Telkom",
+    "street": "Gedung Student Center Lt. 1, Jl. Telekomunikasi No. 1, Terusan Buahbatu, Sukapura, Dayeuhkolot",
+    "city": "Kabupaten Bandung",
+    "region": "Jawa Barat",
+    "postalCode": "40257",
+    "mapsUrl": "https://maps.google.com/?q=Student+Center+Telkom+University+Bandung",
+    "mapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d107.6295!3d-6.9774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTgnMzguNiJTIDEwN8KwMzcnNDYuMiJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+  },
+  "contact": {
+    "email": "ksrpmi@telkomuniversity.ac.id",
+    "phone": "+6281234567890",
+    "whatsapp": "+6281234567890"
+  },
+  "socials": [
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com/ksrpmitelkom",
+      "handle": "@ksrpmitelkom"
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://tiktok.com/@ksrpmitelkom",
+      "handle": "@ksrpmitelkom"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@ksrpmiunittelkom",
+      "handle": "KSR PMI Unit Telkom University"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/company/ksr-pmi-telkom",
+      "handle": "KSR PMI Unit Universitas Telkom"
+    }
+  ],
+  "links": {
+    "registration": "https://forms.google.com/ksr-pmi-telkom-diklatsar-2024",
+    "serviceRequest": "https://wa.me/6281234567890"
+  },
+  "stats": [
+    {
+      "label": "Lorem ipsum dolor",
+      "value": 11,
+      "suffix": " Tahun"
+    },
+    {
+      "label": "Consectetur adipiscing elit",
+      "value": 78,
+      "suffix": "+"
+    },
+    {
+      "label": "Sed do eiusmod tempor",
+      "value": 1250,
+      "suffix": "+"
+    },
+    {
+      "label": "Ut labore et dolore",
+      "value": 140,
+      "suffix": "+"
+    }
+  ],
+  "nav": [
+    {
+      "label": "Beranda",
+      "href": "/"
+    },
+    {
+      "label": "Tentang",
+      "href": "/tentang/sejarah",
+      "children": [
+        {
+          "label": "Sejarah",
+          "href": "/tentang/sejarah"
+        },
+        {
+          "label": "Visi & Misi",
+          "href": "/tentang/visi-misi"
+        },
+        {
+          "label": "7 Prinsip Dasar",
+          "href": "/tentang/prinsip"
+        },
+        {
+          "label": "Aturan Lambang",
+          "href": "/tentang/lambang"
+        },
+        {
+          "label": "Struktur Organisasi",
+          "href": "/tentang/struktur"
+        }
+      ]
+    },
+    {
+      "label": "Kepengurusan",
+      "href": "/kepengurusan",
+      "children": [
+        {
+          "label": "Kabinet Aktif",
+          "href": "/kepengurusan"
+        },
+        {
+          "label": "Arsip Periode",
+          "href": "/kepengurusan/arsip"
+        }
+      ]
+    },
+    {
+      "label": "Kegiatan",
+      "href": "/kegiatan",
+      "children": [
+        {
+          "label": "Program Kerja",
+          "href": "/program"
+        },
+        {
+          "label": "Daftar Kegiatan",
+          "href": "/kegiatan"
+        },
+        {
+          "label": "Prestasi",
+          "href": "/prestasi"
+        },
+        {
+          "label": "Galeri Dokumentasi",
+          "href": "/galeri"
+        }
+      ]
+    },
+    {
+      "label": "Layanan",
+      "href": "/layanan"
+    },
+    {
+      "label": "Gabung",
+      "href": "/gabung"
+    },
+    {
+      "label": "Kontak",
+      "href": "/kontak"
+    }
+  ]
+}

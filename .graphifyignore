@@ -1,0 +1,7 @@
+node_modules/
+.next/
+out/
+.engram/
+design/prototypes/
+public/media/
+public/og/

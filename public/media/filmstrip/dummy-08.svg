@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#050a12"/>
+      <stop offset="0.55" stop-color="#0f2233"/>
+      <stop offset="1" stop-color="#274353"/>
+    </linearGradient>
+    <radialGradient id="beam" cx="0.2" cy="0.55" r="0.5">
+      <stop offset="0" stop-color="#e8f4ff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#e8f4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.8">
+      <stop offset="0.5" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.66"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#night)"/>
+  <rect width="1600" height="900" fill="url(#beam)"/>
+
+  <g fill="#060b11">
+    <rect x="700" y="430" width="620" height="230" rx="18"/>
+    <rect x="620" y="500" width="120" height="160" rx="14"/>
+    <rect x="1320" y="520" width="110" height="140" rx="16"/>
+    <circle cx="760" cy="676" r="46"/>
+    <circle cx="1250" cy="676" r="46"/>
+    <path d="M-80 720 Q300 690 620 716 L620 760 L-80 760 Z"/>
+    <path d="M1320 740 Q1480 706 1680 738 L1680 800 L1320 780 Z" opacity="0.7"/>
+  </g>
+
+  <rect x="760" y="540" width="480" height="26" fill="#d92b35"/>
+  <rect x="900" y="520" width="150" height="26" fill="#f1f4f7" opacity="0.85"/>
+
+  <g fill="#ff3b47">
+    <rect x="760" y="418" width="120" height="16" rx="8"/>
+    <rect x="906" y="418" width="120" height="16" rx="8"/>
+  </g>
+  <g fill="#ff6a72" opacity="0.7" filter="url(#soft)">
+    <rect x="740" y="404" width="160" height="40" rx="20"/>
+    <rect x="886" y="404" width="160" height="40" rx="20"/>
+    <path d="M1380 560 L1680 640 L1680 720 L1330 620 Z"/>
+  </g>
+
+  <g fill="#04080c">
+    <g transform="translate(260 540)">
+      <circle cx="44" cy="32" r="26"/>
+      <path d="M2 72 Q44 44 86 72 L108 300 H-16 Z"/>
+    </g>
+    <g transform="translate(430 570)">
+      <circle cx="40" cy="30" r="24"/>
+      <path d="M4 68 Q40 42 76 68 L96 280 H-14 Z"/>
+    </g>
+  </g>
+
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.55"/>
+  <rect width="1600" height="900" fill="url(#vig)"/>
+</svg>

@@ -1,0 +1,124 @@
+{
+  "periode": "2024-2025",
+  "motto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "komandan": {
+    "nama": "Lorem Ipsum",
+    "jabatan": "Lorem Ipsum Dolor",
+    "programStudi": "Lorem ipsum dolor sit amet",
+    "angkatan": "2021"
+  },
+  "wakil": [
+    {
+      "nama": "Dolor Sit Amet",
+      "jabatan": "Lorem Ipsum Dolor",
+      "programStudi": "Lorem ipsum dolor sit amet",
+      "angkatan": "2021"
+    }
+  ],
+  "inti": [
+    {
+      "nama": "Consectetur Adipiscing",
+      "jabatan": "Lorem Ipsum Dolor",
+      "programStudi": "Lorem ipsum dolor sit amet",
+      "angkatan": "2022"
+    },
+    {
+      "nama": "Sed Do Eiusmod",
+      "jabatan": "Lorem Ipsum Dolor",
+      "programStudi": "Lorem ipsum dolor sit amet",
+      "angkatan": "2022"
+    }
+  ],
+  "divisi": [
+    {
+      "slug": "operasional-bencana",
+      "nama": "Lorem Ipsum Dolor Sit Amet",
+      "anggota": [
+        {
+          "nama": "Tempor Incididunt",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2022"
+        },
+        {
+          "nama": "Ut Labore Et Dolore",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2023"
+        }
+      ]
+    },
+    {
+      "slug": "pendidikan-pelatihan",
+      "nama": "Lorem Ipsum Dolor Sit Amet",
+      "anggota": [
+        {
+          "nama": "Lorem Ipsum",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2022"
+        },
+        {
+          "nama": "Dolor Sit Amet",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2023"
+        }
+      ]
+    },
+    {
+      "slug": "humas-kemitraan",
+      "nama": "Lorem Ipsum Dolor Sit Amet",
+      "anggota": [
+        {
+          "nama": "Consectetur Adipiscing",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2022"
+        },
+        {
+          "nama": "Sed Do Eiusmod",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2023"
+        }
+      ]
+    },
+    {
+      "slug": "logistik-medis",
+      "nama": "Lorem Ipsum Dolor Sit Amet",
+      "anggota": [
+        {
+          "nama": "Tempor Incididunt",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2022"
+        },
+        {
+          "nama": "Ut Labore Et Dolore",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2023"
+        }
+      ]
+    },
+    {
+      "slug": "pengabdian-masyarakat",
+      "nama": "Lorem Ipsum Dolor Sit Amet",
+      "anggota": [
+        {
+          "nama": "Lorem Ipsum",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2022"
+        },
+        {
+          "nama": "Dolor Sit Amet",
+          "jabatan": "Lorem Ipsum Dolor",
+          "programStudi": "Lorem ipsum dolor sit amet",
+          "angkatan": "2023"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "siaga-medis",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "syarat": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "alur": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "cta": {
+      "label": "Ajukan Siaga Medis via WhatsApp",
+      "type": "whatsapp",
+      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mengajukan%20siaga%20medis%20untuk%20kegiatan%20%3Cnama%3E%20pada%20%3Ctanggal%3E%20di%20%3Clokasi%3E."
+    },
+    "ikon": "medical"
+  },
+  {
+    "slug": "donor-darah",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "syarat": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "alur": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "cta": {
+      "label": "Konsultasi Donor Darah via WhatsApp",
+      "type": "whatsapp",
+      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mendiskusikan%20kerja%20sama%20untuk%20kegiatan%20donor%20darah."
+    },
+    "ikon": "blood"
+  },
+  {
+    "slug": "pelatihan",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "syarat": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "alur": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "cta": {
+      "label": "Hubungi Divisi Pelatihan via WhatsApp",
+      "type": "whatsapp",
+      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mengajukan%20pelatihan%20untuk%20%3Csekolah%2Finstansi%3E%20dengan%20jumlah%20peserta%20%3Cn%3E."
+    },
+    "ikon": "training"
+  },
+  {
+    "slug": "kerja-sama",
+    "nama": "Lorem Ipsum Dolor Sit Amet",
+    "ringkas": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "syarat": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "alur": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "cta": {
+      "label": "Diskusikan Kerja Sama via WhatsApp",
+      "type": "whatsapp",
+      "href": "https://wa.me/6281234567890?text=Halo%20KSR%20PMI%20Unit%20Universitas%20Telkom%2C%20saya%20ingin%20mendiskusikan%20kerja%20sama%20untuk%20%3Ckegiatan%3E."
+    },
+    "ikon": "handshake"
+  }
+]

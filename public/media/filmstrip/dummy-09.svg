@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="crowd" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#1a1210"/>
+      <stop offset="0.55" stop-color="#4c2a20"/>
+      <stop offset="1" stop-color="#9b5a3c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.6" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#ffcf8f" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffcf8f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.78">
+      <stop offset="0.5" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.62"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#crowd)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <g fill="#0a0706">
+    <g transform="translate(180 480)">
+      <circle cx="46" cy="34" r="28"/>
+      <path d="M0 76 Q46 46 92 76 L114 330 H-22 Z"/>
+      <path d="M10 140 L-40 40 L-10 26 L48 130 Z"/>
+    </g>
+    <g transform="translate(400 510)">
+      <circle cx="44" cy="32" r="26"/>
+      <path d="M2 72 Q44 44 86 72 L108 310 H-18 Z"/>
+      <path d="M84 130 L150 44 L176 62 L104 150 Z"/>
+    </g>
+    <g transform="translate(640 470)">
+      <circle cx="48" cy="36" r="30"/>
+      <path d="M0 80 Q48 48 96 80 L120 340 H-24 Z"/>
+    </g>
+    <g transform="translate(880 500)">
+      <circle cx="46" cy="34" r="28"/>
+      <path d="M0 76 Q46 46 92 76 L116 320 H-20 Z"/>
+      <path d="M8 138 L-48 52 L-22 34 L44 130 Z"/>
+    </g>
+    <g transform="translate(1130 480)">
+      <circle cx="48" cy="36" r="30"/>
+      <path d="M0 80 Q48 48 96 80 L120 330 H-24 Z"/>
+      <path d="M92 132 L160 40 L188 60 L112 152 Z"/>
+    </g>
+    <g transform="translate(1360 520)">
+      <circle cx="42" cy="30" r="25"/>
+      <path d="M2 70 Q42 42 82 70 L104 300 H-18 Z"/>
+    </g>
+  </g>
+
+  <g fill="#d92b35">
+    <rect x="606" y="600" width="24" height="68" rx="4"/>
+    <rect x="584" y="622" width="68" height="24" rx="4"/>
+    <path d="M260 250 L300 190 L340 250 Z" opacity="0.85"/>
+    <rect x="296" y="250" width="8" height="120"/>
+    <path d="M1110 280 L1150 220 L1190 280 Z" opacity="0.85"/>
+    <rect x="1146" y="280" width="8" height="110"/>
+  </g>
+
+  <g fill="#ffd9a6" opacity="0.7">
+    <circle cx="240" cy="330" r="6"/>
+    <circle cx="470" cy="300" r="5"/>
+    <circle cx="720" cy="250" r="7"/>
+    <circle cx="980" cy="320" r="5"/>
+    <circle cx="1240" cy="270" r="6"/>
+  </g>
+
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.55"/>
+  <rect width="1600" height="900" fill="url(#vig)"/>
+</svg>

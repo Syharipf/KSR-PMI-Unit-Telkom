@@ -1,0 +1,1600 @@
+@import '../design/tokens.css';
+@import 'tailwindcss';
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-muted: var(--muted);
+  --color-meta: var(--meta);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-accent: var(--accent);
+  --color-accent-on: var(--accent-on);
+  --color-success: var(--success);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gulungan film latar section dokumentasi */
+.filmstrip-row {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.filmstrip-track {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  padding-block: 10px;
+  animation: filmstrip-scroll var(--filmstrip-duration, 90s) linear infinite;
+  will-change: transform;
+}
+
+.filmstrip-row-shell .filmstrip-frame {
+  height: var(--filmstrip-height, clamp(96px, 13vw, 176px));
+}
+
+.filmstrip-track[data-direction='reverse'] {
+  animation-direction: reverse;
+}
+
+.filmstrip-frame {
+  position: relative;
+  flex: none;
+  aspect-ratio: 3 / 2;
+  border: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
+  background: color-mix(in srgb, var(--fg) 10%, transparent);
+}
+
+.filmstrip-frame::before,
+.filmstrip-frame::after {
+  content: '';
+  position: absolute;
+  inset-inline: 4px;
+  height: 7px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--fg) 22%, transparent) 0 6px,
+    transparent 6px 17px
+  );
+}
+
+.filmstrip-frame::before {
+  top: 1px;
+}
+
+.filmstrip-frame::after {
+  bottom: 1px;
+}
+
+@keyframes filmstrip-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filmstrip-track {
+    animation: none;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-heartbeat {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Animasi konteks tanggap darurat — ambulans melintas, EKG, sirine
+   Semua murni CSS: tanpa JS, tanpa layout thrash (transform/opacity).
+   ============================================================ */
+.ambulance-road {
+  --amb-h: clamp(110px, 10.5vw, 140px);
+  --amb-body: #f6f2ea;
+  --amb-ink: #202327;
+  --amb-glass: #42525e;
+  --amb-tire: #191b1e;
+  --amb-rim: #c3bcb1;
+  --amb-spoke: #6f6a62;
+  --amb-road: #2f2c29;
+  --amb-road-line: #f0e2c6;
+  --amb-shoulder: #d9cbbb;
+  --amb-pole: #6f6357;
+  --amb-beam: #ffd9a0;
+  position: relative;
+  width: 100%;
+  height: var(--amb-h);
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--surface-warm) 72%, var(--bg)) 0%,
+    var(--amb-shoulder) 54%,
+    var(--amb-road) 54%,
+    var(--amb-road) 100%
+  );
+}
+
+[data-theme='dark'] .ambulance-road {
+  --amb-body: #efe9df;
+  --amb-ink: #0b0c0e;
+  --amb-glass: #26333c;
+  --amb-tire: #08090a;
+  --amb-rim: #8d867c;
+  --amb-spoke: #8a857c;
+  --amb-road: #111214;
+  --amb-road-line: #d9c9a8;
+  --amb-shoulder: #1d1d22;
+  --amb-pole: #5b5349;
+  --amb-beam: #ffcf86;
+}
+
+.ambulance-road::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 46%;
+  height: 1px;
+  background: color-mix(in oklab, var(--amb-road-line) 26%, transparent);
+}
+
+.ambulance-hills {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 46%;
+  z-index: 0;
+  height: 56px;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.ambulance-scenery {
+  position: absolute;
+  left: 0;
+  bottom: 46%;
+  z-index: 1;
+  width: 200%;
+  height: 68px;
+  opacity: 0.6;
+  animation: ambulance-scenery 14s linear infinite;
+  will-change: transform;
+}
+
+.ambulance-lane {
+  position: absolute;
+  left: 0;
+  bottom: 22px;
+  z-index: 2;
+  width: calc(100% + 10vw);
+  height: 3px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--amb-road-line) 0 4vw,
+    transparent 4vw 10vw
+  );
+  opacity: 0.55;
+  animation: ambulance-lane 1.015625s linear infinite;
+  will-change: transform;
+}
+
+.ambulance-vehicle {
+  position: absolute;
+  left: 0;
+  bottom: 9px;
+  z-index: 3;
+  width: clamp(168px, 17vw, 240px);
+  animation: ambulance-drive 13s linear infinite;
+  will-change: transform;
+}
+
+.ambulance-suspension {
+  animation: ambulance-suspension 520ms ease-in-out infinite;
+}
+
+.ambulance-wheel {
+  animation: ambulance-wheel 620ms linear infinite;
+}
+
+.ambulance-beacon-lens {
+  animation: ambulance-beacon-lens 640ms steps(1, end) infinite;
+}
+
+.ambulance-beacon-glow {
+  animation: ambulance-beacon-glow 640ms ease-in-out infinite alternate;
+}
+
+.ambulance-streak {
+  animation: ambulance-streak 900ms ease-out infinite;
+}
+
+.ambulance-wake {
+  animation: ambulance-wake 700ms ease-out infinite;
+}
+
+@keyframes ambulance-drive {
+  from {
+    transform: translateX(-20vw);
+  }
+  to {
+    transform: translateX(108vw);
+  }
+}
+
+@keyframes ambulance-suspension {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.2px);
+  }
+}
+
+@keyframes ambulance-wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ambulance-beacon-lens {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.12;
+  }
+}
+
+@keyframes ambulance-beacon-glow {
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0.45;
+  }
+}
+
+@keyframes ambulance-streak {
+  0% {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+}
+
+@keyframes ambulance-wake {
+  0% {
+    opacity: 0.35;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes ambulance-lane {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-10vw);
+  }
+}
+
+@keyframes ambulance-scenery {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambulance-vehicle {
+    animation: none !important;
+    transform: translateX(22vw);
+  }
+  .ambulance-suspension,
+  .ambulance-wheel,
+  .ambulance-beacon-lens,
+  .ambulance-beacon-glow,
+  .ambulance-streak,
+  .ambulance-wake,
+  .ambulance-lane,
+  .ambulance-scenery {
+    animation: none !important;
+  }
+  .ambulance-beacon-lens {
+    opacity: 1;
+  }
+}
+/* Denyut EKG menyapu sepanjang garis */
+.ecg-trace {
+  stroke-dasharray: 240 1440;
+  animation: ecg-run 5.4s linear infinite;
+}
+
+.ecg-glow {
+  stroke-dasharray: 240 1440;
+  animation: ecg-run 5.4s linear infinite;
+  filter: blur(3px);
+  opacity: 0.55;
+}
+
+@keyframes ecg-run {
+  from {
+    stroke-dashoffset: 1680;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Sorot sirine melintas pada header seksi */
+.siren-sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 42%,
+    color-mix(in oklab, var(--accent) 12%, transparent) 50%,
+    transparent 58%
+  );
+  background-size: 220% 100%;
+  animation: siren-sweep 7s ease-in-out infinite;
+}
+
+@keyframes siren-sweep {
+  0%,
+  100% {
+    background-position: 160% 0;
+  }
+  50% {
+    background-position: -60% 0;
+  }
+}
+
+/* Palang kemanusiaan melayang pelan di latar hero */
+.cross-drift {
+  animation: cross-drift 22s ease-in-out infinite;
+}
+
+.cross-drift-slow {
+  animation: cross-drift 34s ease-in-out infinite reverse;
+}
+
+@keyframes cross-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(-14px, -18px, 0) rotate(4deg);
+  }
+  66% {
+    transform: translate3d(10px, 12px, 0) rotate(-3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ecg-trace,
+  .ecg-glow,
+  .siren-sweep::after,
+  .cross-drift,
+  .cross-drift-slow {
+    animation: none !important;
+  }
+}
+
+/* Bilah kemajuan gulir bergaya denyut EKG (scroll-driven, tanpa JS) */
+.scroll-progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--accent), var(--warn));
+  animation: scroll-progress linear both;
+  animation-timeline: scroll(root block);
+}
+
+@keyframes scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Film tiga babak Solferino — panggung berganti adegan:
+   pertempuran (1859) → malam Castiglione → Jenewa 1863.
+   Semua murni CSS, 36s siklus (12s per babak), tanpa JS klien.
+   ============================================================ */
+
+.solferino-scene {
+  --scene-cycle: 36s;
+}
+
+.scene-stage {
+  --sc-sky-top: #f8eee2;
+  --sc-sky-bottom: #e8d3b9;
+  --sc-sun: #e58a6c;
+  --sc-hill-far: #c8b39b;
+  --sc-hill-mid: #a38c73;
+  --sc-ground: #7c6650;
+  --sc-ground-deep: #5a4737;
+  --sc-ink: #302720;
+  --sc-ink-soft: #5d4f41;
+  --sc-rim: rgb(247 236 223 / 0.22);
+  --sc-smoke: #fbf3e8;
+  --sc-night-top: #0a1218;
+  --sc-night-bottom: #16222b;
+  --sc-stone: #27313a;
+  --sc-stone-lit: #3d4a55;
+  --sc-lamp: #ffb257;
+  --sc-lamp-soft: #ffd9a0;
+  --sc-skin: #d8c0a2;
+  --sc-cloth: #b7a58d;
+  --sc-wood: #6a4b32;
+  --sc-wood-deep: #483222;
+  --sc-wall: #e3d4bf;
+  --sc-floor: #8b6a4c;
+  --sc-window: #cfdde1;
+  --sc-alp: #879ba2;
+  --sc-paper: #f7ecdf;
+  --sc-document: #f7ecdf;
+  --sc-star: #f7ecdf;
+  --sc-vignette: rgb(36 26 18 / 0.38);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1200 / 520;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--sc-paper);
+}
+
+[data-theme='dark'] .scene-stage {
+  --sc-sky-top: #171512;
+  --sc-sky-bottom: #2a211a;
+  --sc-sun: #c04a35;
+  --sc-hill-far: #2b2520;
+  --sc-hill-mid: #3a3027;
+  --sc-ground: #241f1a;
+  --sc-ground-deep: #17130f;
+  --sc-ink: #08080a;
+  --sc-ink-soft: #8d8173;
+  --sc-rim: rgb(240 222 196 / 0.35);
+  --sc-smoke: #4a423a;
+  --sc-night-top: #05080b;
+  --sc-night-bottom: #0b1116;
+  --sc-stone: #182129;
+  --sc-stone-lit: #2c3943;
+  --sc-lamp: #ffb257;
+  --sc-lamp-soft: #ffd9a0;
+  --sc-skin: #c9ae8d;
+  --sc-cloth: #7e705f;
+  --sc-wood: #3a2a1e;
+  --sc-wood-deep: #241a12;
+  --sc-wall: #141317;
+  --sc-floor: #2a1f18;
+  --sc-window: #27404b;
+  --sc-alp: #52666e;
+  --sc-paper: #171512;
+  --sc-document: #e8dfd2;
+  --sc-star: #f4e7d2;
+  --sc-vignette: rgb(0 0 0 / 0.55);
+}
+
+.scene-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform-origin: 50% 55%;
+  animation: scene-layer var(--scene-cycle) linear infinite;
+  animation-delay: var(--scene-delay, 0s);
+  will-change: opacity, transform;
+}
+
+@keyframes scene-layer {
+  0% {
+    opacity: 1;
+    transform: scale(1.015) translate3d(0, 0, 0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.055) translate3d(var(--cam-x, 0px), var(--cam-y, 0px), 0);
+  }
+  33.3% {
+    opacity: 0;
+    transform: scale(1.015) translate3d(0, 0, 0);
+  }
+  96% {
+    opacity: 0;
+    transform: scale(1.015) translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.015) translate3d(0, 0, 0);
+  }
+}
+
+.scene-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    transparent 52%,
+    var(--sc-vignette) 100%
+  );
+}
+
+.scene-progress {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  gap: 2px;
+  padding: 0 2px 2px;
+}
+
+.scene-progress span {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--sc-ink) 20%, transparent);
+}
+
+.scene-progress span::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: scene-progress var(--scene-cycle) linear infinite;
+  animation-delay: var(--scene-delay, 0s);
+}
+
+@keyframes scene-progress {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  33.2% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  33.3%,
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+.scene-caption {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: scene-caption var(--scene-cycle) linear infinite;
+  animation-delay: var(--scene-delay, 0s);
+}
+
+@keyframes scene-caption {
+  0%,
+  33.1% {
+    opacity: 1;
+  }
+  33.3%,
+  99.4% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Babak 1 — Animasi adegan pertempuran */
+.bs-cloud {
+  animation: bs-cloud 40s ease-in-out infinite alternate;
+}
+
+@keyframes bs-cloud {
+  from {
+    transform: translateX(-12px);
+  }
+  to {
+    transform: translateX(12px);
+  }
+}
+
+.bs-smoke {
+  animation: bs-smoke 12s ease-out infinite;
+}
+
+@keyframes bs-smoke {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(-110px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.bs-flash {
+  animation: bs-flash 6.4s steps(1, end) infinite;
+}
+
+@keyframes bs-flash {
+  0%,
+  4% {
+    opacity: 0.95;
+  }
+  5%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.bs-flag {
+  animation: bs-flag 3.6s ease-in-out infinite alternate;
+}
+
+@keyframes bs-flag {
+  from {
+    transform: skewY(-3deg);
+  }
+  to {
+    transform: skewY(3deg);
+  }
+}
+
+.bs-birds {
+  animation: bs-birds 28s linear infinite alternate;
+}
+
+@keyframes bs-birds {
+  from {
+    transform: translateX(-30px);
+  }
+  to {
+    transform: translateX(30px);
+  }
+}
+
+.bs-grass {
+  animation: bs-grass 5s ease-in-out infinite alternate;
+}
+
+@keyframes bs-grass {
+  from {
+    transform: skewX(-3deg);
+  }
+  to {
+    transform: skewX(3deg);
+  }
+}
+
+.bs-march {
+  animation: bs-march 22s ease-in-out infinite alternate;
+}
+
+@keyframes bs-march {
+  from {
+    transform: translateX(-6px);
+  }
+  to {
+    transform: translateX(6px);
+  }
+}
+
+/* Babak 2 — Animasi adegan Castiglione */
+.cs-star {
+  animation: cs-star 4.8s ease-in-out infinite;
+}
+
+@keyframes cs-star {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.cs-lantern {
+  animation: cs-lantern 3.4s ease-in-out infinite;
+}
+
+@keyframes cs-lantern {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.cs-lantern-glow {
+  animation: cs-lantern-glow 3.4s ease-in-out infinite;
+}
+
+@keyframes cs-lantern-glow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.cs-beam {
+  animation: cs-beam 9s ease-in-out infinite alternate;
+}
+
+@keyframes cs-beam {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+
+.cs-wounded {
+  animation: cs-wounded 6s ease-in-out infinite;
+}
+
+@keyframes cs-wounded {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.04);
+  }
+}
+
+.cs-candle {
+  animation: cs-candle 2.8s ease-in-out infinite;
+}
+
+@keyframes cs-candle {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* Babak 3 — Animasi adegan Jenewa */
+.gs-ink {
+  animation: gs-ink 7s ease-out infinite;
+}
+
+@keyframes gs-ink {
+  0%,
+  8% {
+    opacity: 0;
+  }
+  18%,
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.gs-quill {
+  animation: gs-quill 7s ease-in-out infinite alternate;
+}
+
+@keyframes gs-quill {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(14px, -3px);
+  }
+}
+
+.gs-candle {
+  animation: gs-candle 3s ease-in-out infinite;
+}
+
+@keyframes gs-candle {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.gs-dust {
+  animation: gs-dust 12s linear infinite;
+}
+
+@keyframes gs-dust {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+}
+
+.gs-curtain {
+  animation: gs-curtain 8s ease-in-out infinite alternate;
+}
+
+@keyframes gs-curtain {
+  from {
+    transform: skewX(1.5deg);
+  }
+  to {
+    transform: skewX(-1.5deg);
+  }
+}
+
+.gs-rings circle {
+  animation: gs-rings 9s ease-out infinite;
+}
+
+@keyframes gs-rings {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.65);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solferino-scene .scene-layer,
+  .solferino-scene .scene-layer *,
+  .solferino-scene .scene-caption {
+    animation: none !important;
+  }
+  .solferino-scene .scene-layer {
+    transform: none !important;
+  }
+  .solferino-scene .scene-layer:not(:first-child),
+  .solferino-scene .scene-caption:not(:first-child) {
+    opacity: 0 !important;
+  }
+  .solferino-scene .scene-layer:first-child,
+  .solferino-scene .scene-caption:first-child {
+    opacity: 1 !important;
+  }
+  .scene-progress {
+    display: none;
+  }
+}
+
+/* Panggung lebih tinggi di layar sempit agar figur tetap terbaca */
+@media (max-width: 640px) {
+  .scene-stage {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Panggung film dibatasi agar tidak membesar mengikuti layar ultrawide */
+@media (min-width: 1024px) {
+  .scene-stage {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+}
+
+/* Kartu pengurus berpotret penuh */
+.cabinet-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  isolation: isolate;
+  width: 100%;
+  max-width: 360px;
+  margin-inline: auto;
+  transition:
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 300ms ease,
+    box-shadow 450ms ease;
+}
+
+.cabinet-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
+  box-shadow: 0 32px 60px -42px color-mix(in oklab, var(--accent) 70%, transparent);
+}
+
+.cabinet-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface-warm);
+}
+
+.cabinet-photo {
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cabinet-card:hover .cabinet-photo {
+  transform: scale(1.07);
+}
+
+.cabinet-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 1.1rem 1.15rem 1.15rem;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgb(8 10 12 / 0.88) 0%,
+    rgb(8 10 12 / 0.55) 45%,
+    transparent 100%
+  );
+}
+
+.cabinet-card--featured .cabinet-overlay {
+  padding: 1.5rem 1.5rem 1.6rem;
+}
+
+.cabinet-card--featured {
+  max-width: 640px;
+}
+
+.cabinet-role {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--accent) 70%, #fff);
+}
+
+.cabinet-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.cabinet-card--featured .cabinet-name {
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+}
+
+.cabinet-meta {
+  font-size: 0.8rem;
+  color: rgb(255 255 255 / 0.72);
+}
+
+/* Kilau menyapu saat kursor mendekat */
+.cabinet-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgb(255 255 255 / 0.16) 50%,
+    transparent 62%
+  );
+  transform: translateX(-130%);
+  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cabinet-card:hover::after {
+  transform: translateX(130%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cabinet-card,
+  .cabinet-photo,
+  .cabinet-card::after {
+    transition: none;
+  }
+}
+
+/* Bagan organisasi bergaya pohon keluarga */
+.org-tier-label {
+  margin: 0.35rem 0 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  perspective: 1200px;
+  perspective-origin: 50% 0%;
+}
+
+.org-tier {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.org-stem {
+  position: relative;
+  width: 1px;
+  height: var(--org-stem-h, 2rem);
+  background: var(--border);
+}
+
+.org-stem--dept {
+  --org-stem-h: clamp(3rem, 3.6vw, 4.5rem);
+}
+
+/* Konektor pengawasan: garis putus-putus, bukan garis komando */
+.org-stem--oversight {
+  background: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--border) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+.org-card {
+  position: relative;
+  width: min(100%, 260px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 1.15rem 1.25rem;
+  text-align: left;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    translate 220ms ease;
+}
+
+.org-card:hover {
+  translate: 0 -3px;
+  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
+  box-shadow: 0 18px 40px -28px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+
+.org-card--lead {
+  width: min(100%, 340px);
+  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-warm) 100%);
+}
+
+.org-tier--oversight {
+  width: 100%;
+}
+
+.org-card--oversight {
+  width: min(100%, 560px);
+  border-style: dashed;
+  background: color-mix(in oklab, var(--surface) 70%, transparent);
+}
+
+.org-card__pill {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--meta);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+}
+
+.org-card__abbr {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+.org-card__role--dept {
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+}
+
+.org-card__role {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.org-card__field {
+  margin-top: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--meta);
+}
+
+.org-card__scope {
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--fg-2);
+}
+
+.org-card__index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--border-soft);
+}
+
+.org-card__duties {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.org-card__duties li {
+  position: relative;
+  padding-left: 0.95rem;
+}
+
+.org-card__duties li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--accent) 70%, transparent);
+}
+
+/* Cabang departemen: satu baris dengan rel horizontal di layar lebar */
+.org-branch {
+  --org-branch-gap: clamp(3rem, 3.2vw, 4rem);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.1vw, 1.35rem);
+  padding-top: var(--org-branch-gap);
+}
+
+.org-branch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8.33%;
+  right: 8.33%;
+  height: 1px;
+  background: var(--border);
+}
+
+.org-branch > .org-card {
+  width: 100%;
+}
+
+.org-branch > .org-card::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(var(--org-branch-gap, 2.75rem) * -1);
+  width: 1px;
+  height: var(--org-branch-gap, 2.75rem);
+  background: var(--border);
+}
+
+/* Layar sempit: cabang berubah menjadi daftar bertulang tunggal */
+@media (max-width: 1279px) {
+  .org-stem--dept {
+    display: none;
+  }
+
+  .org-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-left: 1.25rem;
+    padding-top: 0;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--border);
+  }
+
+  .org-branch > .org-card::before {
+    top: 1.85rem;
+  }
+
+  .org-branch::before {
+    display: none;
+  }
+
+  .org-branch > .org-card::before {
+    left: -1.5rem;
+    top: 1.85rem;
+    width: 1.5rem;
+    height: 1px;
+  }
+
+  .org-branch > .org-card::after {
+    content: '';
+    position: absolute;
+    left: -1.72rem;
+    top: 1.68rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+}
+
+@media (max-width: 767px) {
+  .org-tier--staff .org-card {
+    width: 100%;
+  }
+}
+
+/* Kerapatan kartu cabang pada layar 1280–1539px */
+@media (min-width: 1280px) and (max-width: 1539px) {
+  .org-branch {
+    gap: 0.85rem;
+  }
+
+  .org-card--dept {
+    padding: 0.95rem 1rem;
+  }
+
+  .org-card--dept .org-card__scope {
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .org-card--dept .org-card__abbr {
+    font-size: 0.88rem;
+  }
+}
+
+/* Daftar rincian tugas di bawah bagan */
+.org-detail {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 1.1rem 1.25rem;
+  transition:
+    border-color 220ms ease,
+    translate 220ms ease;
+}
+
+.org-detail:hover {
+  translate: 0 -2px;
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+}
+
+.org-detail .org-card__duties {
+  margin-top: 0.65rem;
+}
+
+/* Animasi bagan: kartu muncul saat masuk viewport, garis tumbuh dari simpul induk */
+@keyframes org-card-in {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(-18deg) translateY(26px) scale(0.96);
+  }
+  68% {
+    opacity: 1;
+    transform: perspective(900px) rotateX(2.5deg) translateY(-3px) scale(1.012);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes org-line-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes org-line-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .org-card {
+    animation: org-card-in cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-timeline: view();
+    animation-range: entry 8% entry 55%;
+  }
+
+  .org-stem {
+    transform-origin: top center;
+    animation: org-line-y linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .org-branch::before {
+    transform-origin: left center;
+    animation: org-line-x linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+
+  .org-branch > .org-card::before {
+    transform-origin: top center;
+    animation: org-line-y linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .org-card,
+  .org-stem,
+  .org-branch::before,
+  .org-branch > .org-card::before {
+    animation: none !important;
+  }
+}
+
+/* Ekualiser kecil pada tombol suasana film */
+.story-eq {
+  transform-origin: bottom;
+  animation: story-eq 1.1s ease-in-out infinite;
+}
+
+@keyframes story-eq {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-eq {
+    animation: none;
+  }
+}
+
+/* Alur penggabungan tiga akar unit — garis putus bergerak */
+.merge-flow {
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0 10px,
+    transparent 10px 20px
+  );
+  animation: merge-flow 1.1s linear infinite;
+}
+
+@keyframes merge-flow {
+  to {
+    background-position-x: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .merge-flow {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Transisi antar halaman — masuk halus setiap perpindahan rute.
+   Template remount per navigasi, jadi animasi CSS ini selalu diputar.
+   ============================================================ */
+
+.page-transition {
+  animation: page-enter 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+/* Crossfade bawaan peramban untuk navigasi muat penuh (direct URL / reload) */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* Menu turun dan laci seluler ikut bertransisi, bukan muncul mendadak */
+.menu-drawer {
+  animation: menu-drawer-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes menu-drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-drawer {
+    animation: none;
+  }
+}
