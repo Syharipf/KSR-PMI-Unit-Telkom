@@ -1,34 +1,26 @@
 [
   {
-    "pertanyaan": "Lorem ipsum dolor sit amet?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "pertanyaan": "Kapan pendaftaran relawan baru (Diklatsar) dibuka?",
+    "jawaban": "Pendaftaran calon relawan baru KSR PMI Unit Universitas Telkom diselenggarakan secara berkala setiap periode kepengurusan. Tanggal dan jadwal resmi pendaftaran akan diumumkan melalui kanal Instagram resmi @ksrpmiunittelkom dan OA LINE unit."
   },
   {
-    "pertanyaan": "Consectetur adipiscing elit?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "pertanyaan": "Siapa saja yang berhak mendaftar sebagai anggota KSR PMI Tel-U?",
+    "jawaban": "Seluruh mahasiswa aktif Telkom University dari seluruh fakultas, program studi, dan jenjang angkatan berhak mendaftar tanpa batasan latar belakang jurusan."
   },
   {
-    "pertanyaan": "Lorem ipsum dolor sit amet?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "pertanyaan": "Apakah harus memiliki pengalaman PMR atau ilmu medis sebelumnya?",
+    "jawaban": "Tidak harus. Seluruh materi kepalangmerahan, pertolongan pertama, pembidaian, resusitasi jantung paru (RJP), hingga simulasi evakuasi lapangan akan diajarkan dari nol oleh pelatih bersertifikat PMI."
   },
   {
-    "pertanyaan": "Consectetur adipiscing elit?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "pertanyaan": "Apa saja manfaat bergabung dengan KSR PMI Unit Universitas Telkom?",
+    "jawaban": "Anggota mendapatkan pelatihan keahlian medis praktis berstandar PMI, pengalaman langsung penanganan medis darurat pada perhelatan kampus, peningkatan kepemimpinan manajerial, pengakuan poin TAK/SKPI, serta jejaring persaudaraan relawan luas."
   },
   {
-    "pertanyaan": "Lorem ipsum dolor sit amet?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "pertanyaan": "Apakah kegiatan KSR akan mengganggu jadwal perkuliahan?",
+    "jawaban": "Tidak. Seluruh agenda pelatihan rutin dan penugasan medis diatur secara proporsional di luar jam kuliah aktif, serta menjunjung tinggi prioritas akademik mahasiswa."
   },
   {
-    "pertanyaan": "Consectetur adipiscing elit?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    "pertanyaan": "Lorem ipsum dolor sit amet?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    "pertanyaan": "Consectetur adipiscing elit?",
-    "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "pertanyaan": "Bagaimana jika calon pendaftar memiliki riwayat kondisi kesehatan tertentu?",
+    "jawaban": "Calon pendaftar diharapkan mencantumkan kondisi kesehatan secara jujur pada formulir screening. Tim panitia dan medis akan menyesuaikan beban fisik dan mempersiapkan pendampingan yang tepat selama gladi lapangan."
   }
 ]

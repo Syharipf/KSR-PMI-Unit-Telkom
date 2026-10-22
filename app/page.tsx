@@ -259,7 +259,7 @@ export default function HomePage() {
               href="/gabung"
               className="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-md)] bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:brightness-95"
             >
-              Daftar Sekarang (Google Form)
+              Informasi Pendaftaran (Coming Soon)
             </Link>
             <Link
               href="/kontak"
